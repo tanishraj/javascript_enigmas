@@ -15,9 +15,13 @@ var b = "10";
 console.log(a == b);
 ```
 
-### Answer:
+### Output:
 
-`true`. `==` operator in javascript only compares the values and not the type hence it will log `true`.
+`true`.
+
+### Explanation:
+
+`==` operator in javascript only compares the values and not the type hence it will log `true`.
 
 ##
 
@@ -43,13 +47,15 @@ fn().then((res) => {
 console.log("end");
 ```
 
-### Answer:
+### Output:
 
 `start`
 `middle`
 `1`
 `end`
 `success`
+
+### Explanation:
 
 Since Javascript is a single threaded language, it can process only one statement at a time. Also we know that Promises are async code that will be kept aside in the task queue to be executed later until the main thread / synchronous code is executed.
 
