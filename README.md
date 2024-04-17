@@ -10,12 +10,12 @@ What will be the output for below javascript code?
 
 ```javascript
 var a = 10;
-var b = 10;
+var b = "10";
 console.log(a == b);
 ```
 
 ### Answer:
-`true`. `==` operator in javascript only compares the values hence it will log `true`.
+`true`. `==` operator in javascript only compares the values and not the type hence it will log `true`.
 
 ##
 
