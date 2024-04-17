@@ -68,6 +68,37 @@ So, below are the order the output will be printed...
 
 ##
 
+### Question 3:
+
+What will be the output for below javascript code?
+
+```javascript
+const a = [{ name: "John" }, { name: "Jane" }];
+
+const b = [...a];
+
+b[0] = { name: "Oliver" };
+b[1].age = 30;
+
+console.log(a);
+console.log(b);
+```
+
+### Output:
+
+a = `[ { name: 'John' }, { name: 'Jane', age: 30 } ]`
+
+b = `[ { name: 'Oliver' }, { name: 'Jane', age: 30 } ]`
+
+### Explanation:
+
+1. `const a = [{name: "John"}, {name: "Jane"}]` - Creates a variable `a` with an array that contains 2 objects.
+2. `const b = [...a];` - Creates a shallow copy of `a`, where reference of objects is being copied to variable `b`.
+3. `b[0] = {name: "Oliver"}` - Replacing the first object in variable `b` with a brand new object, without affecting the variable `a`.
+4. `b[1].age = 30;` - Now updating the second object inside variable `b` which is the reference of second object in variable `a`, will update the values in both `a` and `b` as they both are referencing to the same object.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
