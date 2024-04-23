@@ -197,6 +197,26 @@ console.log(obj.prop);
 
 ##
 
+### Question 8:
+
+What will be the output for below javascript code?
+
+```javascript
+console.log("5" - "3");
+```
+
+### Output:
+
+`2`
+
+### Explanation:
+
+In JavaScript, the code console.log("5" - "3"); will output 2. This might seem complex at first, because subtraction typically deals with numbers. However, JavaScript has a behavior where it tries to convert operands (the values used in an operation) to a common type before performing the operation.
+
+In this example, JavaScript attempts to convert both "5" and "3" to numbers before performing the subtraction.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
