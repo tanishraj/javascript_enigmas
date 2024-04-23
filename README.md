@@ -105,6 +105,26 @@ b = `[ { name: 'Oliver' }, { name: 'Jane', age: 30 } ]`
 
 ##
 
+### Question 4:
+
+What will be the output for below javascript code?
+
+```javascript
+var x = 5;
+var y = 2;
+console.log(x ** y);
+```
+
+### Output:
+
+`25`
+
+### Explanation:
+
+The `**` operator is used for exponentiation in JavaScript. which is equal to `Math.pow(5,2)`. `**` is called exponential operator.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
