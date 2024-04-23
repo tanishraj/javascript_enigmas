@@ -147,6 +147,31 @@ When you use `...args` as a parameter, it creates an array named args within the
 
 ##
 
+### Question 6:
+
+What will be the output for below javascript code?
+
+```javascript
+const a = [1, 2, 3];
+const b = a;
+a.push(4);
+
+console.log(b.length);
+```
+
+### Output:
+
+`4`
+
+### Explanation:
+
+1. `const a = [1, 2, 3];` creates a constant variable named a and assigns an array literal containing the numbers 1, 2, and 3 to it.
+2. `const b = a;` creates another constant variable named b and assigns the value of a to it. However, it's important to understand that this is not copying the array elements. Instead, it's creating a new reference (or alias) that points to the same array object in memory. Both a and b now refer to the same array.
+3. `a.push(4);` uses the push method to add the number 4 to the end of the array that a (and consequently b) refers to. Since a and b point to the same array, this modification affects both variables.
+4. `console.log(b.length);` logs the length of the array using b.length. Because a and b refer to the same modified array, this will print: `4`
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
