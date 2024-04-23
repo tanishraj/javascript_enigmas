@@ -125,6 +125,28 @@ The `**` operator is used for exponentiation in JavaScript. which is equal to `M
 
 ##
 
+### Question 5:
+
+What will be the output for below javascript code?
+
+```javascript
+function getTotal(...args) {
+  console.log(typeof args);
+}
+
+getTotal(871);
+```
+
+### Output:
+
+`object`
+
+### Explanation:
+
+When you use `...args` as a parameter, it creates an array named args within the function that will hold all the arguments passed to the function. So, even though you call `getTotal(871)`, the args array will still contain that single argument `(871)` as an array element. And as `typeof Array` is object.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
