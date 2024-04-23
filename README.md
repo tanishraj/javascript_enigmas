@@ -172,6 +172,31 @@ console.log(b.length);
 
 ##
 
+### Question 7:
+
+What will be the output for below javascript code?
+
+```javascript
+const obj = { prop: 10 };
+const arr = [obj];
+arr[0].prop = 20;
+
+console.log(obj.prop);
+```
+
+### Output:
+
+`20`
+
+### Explanation:
+
+1. `const obj = { prop: 10 };` creates a constant object named obj with a single property named prop that has the value 10.
+2. `const arr = [obj];` creates a constant array named `arr` and assigns a single element to it. That element is a reference to the obj object you created earlier. It's important to remember that you're not copying the object itself, but rather creating a new reference in the array that points to the same object in memory.
+3. `arr[0].prop = 20;` accesses the first element of the arr array (which is the reference to the obj object) and modifies the prop property within that object to have a value of `20`. Because `arr[0]` and obj both refer to the same object, this change is reflected in both.
+4. `console.log(obj.prop);` logs the value of the prop property within the obj object. Since you modified the property in step 3, this will print: `20`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
