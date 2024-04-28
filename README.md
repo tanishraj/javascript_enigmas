@@ -203,17 +203,19 @@ What will be the output for below javascript code?
 
 ```javascript
 console.log("5" - "3");
+console.log("5" - 3);
+console.log(5 - "3");
 ```
 
 ### Output:
 
-`2`
+`2` for all logs.
 
 ### Explanation:
 
 In JavaScript, the code console.log("5" - "3"); will output 2. This might seem complex at first, because subtraction typically deals with numbers. However, JavaScript has a behavior where it tries to convert operands (the values used in an operation) to a common type before performing the operation.
 
-In this example, JavaScript attempts to convert both "5" and "3" to numbers before performing the subtraction.
+In this example, JavaScript attempts to convert both "5" and "3" to numbers before performing the subtraction. Similarly, for all other instances it does the same thing.
 
 ##
 
