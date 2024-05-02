@@ -219,6 +219,32 @@ In this example, JavaScript attempts to convert both "5" and "3" to numbers befo
 
 ##
 
+### Question 9:
+
+What will be the output for below javascript code?
+
+```javascript
+function doSomething(){
+  return 
+  {
+    success: true
+  }
+}
+console.log(doSomething())
+```
+
+### Output:
+
+`undefined`
+
+### Explanation:
+
+In JavaScript, the automatic semicolon insertion (ASI) mechanism interprets the line break after return as the end of the statement, effectively treating it as `return;`. This means that the function returns undefined and the subsequent object literal is never reached.
+
+When the return statement is encountered in the `doSomething` function, the function immediately exits and returns `undefined` by default (if no value is explicitly returned). The object literal `{ success: true }` on the next line is never evaluated or returned because the function has already exited.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
