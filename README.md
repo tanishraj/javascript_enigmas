@@ -271,6 +271,34 @@ So whenever the left operand is either `undefined` or `null` it will return the 
 
 ##
 
+### Question 11:
+
+What will be the output for below javascript code?
+
+```javascript
+console.log(false || "Some Truthy Value");
+console.log(undefined || "Some Truthy Value");
+console.log(null || "Some Truthy Value");
+console.log(NaN || "Some Truthy Value");
+console.log(NaN || NaN || false);
+console.log(true || "Some Truthy Value" || false);
+```
+
+### Output:
+
+`Some Truthy Value`
+`Some Truthy Value`
+`Some Truthy Value`
+`Some Truthy Value`
+`false`
+`true`
+
+### Explanation:
+
+The logical `OR operator (||)` evaluates the operands from left to right and returns the first `truthy` value it encounters. If no `truthy` value is found, it returns the last operand. This behaviour is often used for providing default values.
+
+##
+
 
 ## Contributing
 
