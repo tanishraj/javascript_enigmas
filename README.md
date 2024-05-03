@@ -224,13 +224,13 @@ In this example, JavaScript attempts to convert both "5" and "3" to numbers befo
 What will be the output for below javascript code?
 
 ```javascript
-function doSomething(){
-  return 
+function doSomething() {
+  return;
   {
-    success: true
+    success: true;
   }
 }
-console.log(doSomething())
+console.log(doSomething());
 ```
 
 ### Output:
@@ -250,10 +250,10 @@ When the return statement is encountered in the `doSomething` function, the func
 What will be the output for below javascript code?
 
 ```javascript
-console.log(false ?? "Some Truthy Value"); 
-console.log(undefined ?? "Some Truthy Value"); 
-console.log(null ?? "Some Truthy Value"); 
-console.log(NaN ?? "Some Truthy Value"); 
+console.log(false ?? "Some Truthy Value");
+console.log(undefined ?? "Some Truthy Value");
+console.log(null ?? "Some Truthy Value");
+console.log(NaN ?? "Some Truthy Value");
 ```
 
 ### Output:
@@ -299,6 +299,27 @@ The logical `OR operator (||)` evaluates the operands from left to right and ret
 
 ##
 
+### Question 12:
+
+What will be the output for below javascript code?
+
+```javascript
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 == 0.3);
+```
+
+### Output:
+
+`0.30000000000000004`
+`false`
+
+### Explanation:
+
+`console.log(0.1 + 0.2);` This line performs an addition operation between two decimal numbers, `0.1` and `0.2`. It then logs the result of this operation to the console.
+
+In most programming languages, including JavaScript, floating-point arithmetic operations can sometimes produce unexpected or imprecise results due to the way computers represent and store decimal numbers internally. This is because decimal numbers like `0.1` and `0.2` cannot be represented precisely in binary format.
+
+##
 
 ## Contributing
 
