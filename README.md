@@ -245,6 +245,33 @@ When the return statement is encountered in the `doSomething` function, the func
 
 ##
 
+### Question 10:
+
+What will be the output for below javascript code?
+
+```javascript
+console.log(false ?? "Some Truthy Value"); 
+console.log(undefined ?? "Some Truthy Value"); 
+console.log(null ?? "Some Truthy Value"); 
+console.log(NaN ?? "Some Truthy Value"); 
+```
+
+### Output:
+
+`false`
+`Some Truthy Value`
+`Some Truthy Value`
+`NaN`
+
+### Explanation:
+
+This is a concept of javascript called, `Nullish coalescing operator ??`. So as per `MDN` definition, The `nullish coalescing (??)` operator is a logical operator that returns its right-hand side operand when its left-hand side operand is `null` or `undefined`, and otherwise returns its left-hand side operand.
+
+So whenever the left operand is either `undefined` or `null` it will return the right operand as an output or else the left operand itself will be returned.
+
+##
+
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
