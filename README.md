@@ -325,6 +325,34 @@ Due to the imprecise representation of floating-point numbers mentioned earlier,
 
 ##
 
+### Question 13:
+
+What will be the output for below javascript code?
+
+```javascript
+let x = [0, 1, [2]];
+x[2][0] = 3;
+console.log(x);
+```
+
+### Output:
+
+`[0, 1, [3]]`
+
+### Explanation:
+
+- The variable x was initialized with the array [0, 1, [2]].
+
+- The expression `x[2][0]` accessed the nested array `[2]` inside `x`, which is located at index `2`. Then, it accessed the element at index `0` of that nested array, which was `2`.
+
+- The assignment `x[2][0] = 3` replaced the value `2` with `3` inside the nested array.
+
+- After the modification, the nested array became `[3]`, and the overall `x` array became `[0, 1, [3]]`.
+
+- Finally, `console.log(x)` printed the updated value of `x`, which is `[0, 1, [3]]`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
