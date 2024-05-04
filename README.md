@@ -426,6 +426,48 @@ In the inner function, though, this no longer refers to `myObject`. As a result,
 
 ##
 
+### Question 16:
+
+What will be the output for below javascript code?
+
+```javascript
+function foo1() {
+  return {
+    bar: "hello"
+  };
+}
+
+function foo2() {
+  return;
+  {
+    bar: "hello";
+  }
+}
+
+console.log("foo1 returns:");
+console.log(foo1());
+console.log("foo2 returns:");
+console.log(foo2());
+```
+
+### Output:
+
+`foo1 returns:`
+
+`Object {bar: "hello"}`
+
+`foo2 returns:`
+
+`undefined`
+
+### Explanation:
+
+In JavaScript, the automatic semicolon insertion (ASI) mechanism interprets the line break after return as the end of the statement, effectively treating it as `return;`. This means that the function returns undefined and the subsequent object literal is never reached.
+
+When the return statement is encountered in the `foo1()` function, the function immediately returns the `{ bar: "hello" }`. but in 'foo2()' `return` statement will be converted to `return;`, hence will return `undefined`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
