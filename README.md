@@ -353,6 +353,41 @@ console.log(x);
 
 ##
 
+### Question 14:
+
+What will be the output for below javascript code?
+
+```javascript
+(function () {
+  var a = (b = 3);
+})();
+
+console.log("a defined? " + (typeof a !== undefined));
+console.log("b defined? " + (typeof b !== undefined));
+console.log("b value is ", b);
+console.log("a value is ", a);
+```
+
+### Output:
+
+`a defined? true`
+
+`b defined? true`
+
+`b value is 3`
+
+`ReferenceError: a is not defined`
+
+### Explanation:
+
+Since both the `a` and `b` is defined inside the functional scope most of the developer would expect both `a` and `b` to be undefined outside of the function scope.
+
+Most of the developers think, that `var a = b = 3` is equivalent to `var b = 3; var a = b;`. But thats not how javascript treats this statement. Instead, javascript treats this code as `b = 3; var a = b;`
+
+So, `b` is defined without `var` keyword so it will be accessible outside of the functional scope as it will be treated as a global variable but `a` is defined with `var` keyword it can not be accessed outside of the functional scope. and hence it will be `Reference Error`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
