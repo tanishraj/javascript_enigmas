@@ -603,6 +603,43 @@ Closures allow functions to have private variables and maintain state across mul
 
 ##
 
+### Question 20:
+
+What will be the output for below javascript code?
+
+```javascript
+const greeting = "hello";
+greeting.length = 10;
+console.log(greeting.length);
+console.log(greeting);
+```
+
+### Output:
+
+`5` `hello`
+
+### Explanation:
+
+In JavaScript, strings are immutable, which means their values cannot be changed once they are created. The program demonstrates this behavior by attempting to modify the length property of a string.
+
+1 - The program declares a constant variable greeting and assigns it the string value "hello".
+
+2 - It then attempts to change the length property of the greeting string by assigning it the value 10 using greeting.length = 10;.
+
+3 - However, this assignment operation has no effect because strings in JavaScript are immutable. The length property of a string is a read-only property that reflects the actual number of characters in the string.
+
+4 - The program then logs the length property of the greeting string using console.log(greeting.length);. Since the previous attempt to modify the length property failed, the output is still 5, which is the original length of the "hello" string.
+
+5 - Finally, the program logs the actual value of the greeting string using console.log(greeting);. As expected, the output is "hello", which is the original string value assigned to greeting.
+
+#### Key Points:
+
+- Strings in JavaScript are immutable, meaning their values cannot be changed after they are created.
+- The length property of a string is read-only and reflects the actual number of characters in the string.
+- Attempting to modify the length property of a string has no effect, as it is a derived property based on the string's content.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
