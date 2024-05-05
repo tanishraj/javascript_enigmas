@@ -556,6 +556,53 @@ Therefore, the output of this code will be:
 
 ##
 
+### Question 19:
+
+What will be the output for below javascript code?
+
+```javascript
+function counter() {
+  let count = 0;
+  return () => count++;
+}
+
+let c = counter();
+console.log(c());
+console.log(c());
+console.log(c());
+```
+
+### Output:
+
+`0` `1` `2`
+
+### Explanation:
+
+The code defines a function `counter` that returns another `function`. The returned function is a closure that has access to the count variable defined inside the `counter` function.
+
+1 - The `counter` function is defined.
+
+2 - Inside `counter`, a variable count is declared and initialized to `0`.
+
+3 - The counter function returns an anonymous arrow `function () => count++`.
+
+- This anonymous function has access to the count variable through closure.
+- It increments the count variable and returns its value before incrementing.
+
+4 - The counter function is called, and its returned anonymous function is assigned to the variable c.
+
+5 - `console.log(c());` is executed three times:
+
+- The first time, it logs 0 and increments count to 1.
+- The second time, it logs 1 and increments count to 2.
+- The third time, it logs 2 and increments count to 3.
+
+This behavior is possible because the anonymous function returned by counter has access to the count variable through closure. Each time the anonymous function is called, it increments and returns the count variable, which is preserved in the closure.
+
+Closures allow functions to have private variables and maintain state across multiple function calls. In this example, the counter function creates a new private count variable each time it is called, and the returned anonymous function has access to that private variable through the closure.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
