@@ -468,6 +468,39 @@ When the return statement is encountered in the `foo1()` function, the function 
 
 ##
 
+### Question 17:
+
+What will be the output for below javascript code?
+
+```javascript
+console.log(Boolean([]));
+console.log(Boolean({}));
+console.log(Boolean(""));
+console.log(Boolean(0));
+```
+
+### Output:
+
+`true`
+
+`true`
+
+`false`
+
+`false`
+
+### Explanation:
+
+1 - An empty array `[]` is considered a `truthy` value in JavaScript. When the Boolean function is called with an array, it returns true because arrays are considered non-empty objects.
+
+2 - An empty object `{}` is also considered a `truthy` value in JavaScript. When the Boolean function is called with an object, it returns true because objects are non-empty.
+
+3 - An empty string `""` is considered a `falsy` value in JavaScript. When the Boolean function is called with an empty string, it returns false.
+
+4 - The number `0` is considered a `falsy` value in JavaScript. When the Boolean function is called with 0, it returns false.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
