@@ -501,6 +501,61 @@ console.log(Boolean(0));
 
 ##
 
+### Question 18:
+
+What will be the output for below javascript code?
+
+```javascript
+function left() {
+  return console.log("left");
+}
+
+function right() {
+  return console.log("right");
+}
+
+left() || right();
+```
+
+### Output:
+
+`left`
+`right`
+
+### Explanation:
+
+In this code, you have two functions, `left()` and `right()`, that simply log the strings `left` and `right` to the console, respectively. Then, you have the expression `left() || right();`.
+
+The logical `OR operator (||)` in JavaScript works in the following way:
+
+1 - It evaluates the operand on the left side, in this case, `left()`.
+
+2 - If the left operand is `truthy`, it returns the value of the left operand.
+
+3 - If the left operand is `falsy`, it evaluates the right operand, in this case, `right()`.
+
+4 - If the right operand is evaluated, it returns the value of the right operand.
+
+#### In this specific case, when left() || right(); is executed, the following happens:
+
+1 - `left()` is called, which logs `left` to the console.
+
+2 - The `console.log("left");` statement itself returns undefined, which is a `falsy` value.
+
+3 - Since the left operand `left()` is `falsy`, the logical OR operator evaluates the right operand `right()`.
+
+4 - `right()` is called, which logs `right` to the console.
+
+5 - The `console.log("right");` statement also returns undefined, which is a `falsy` value.
+
+6 - Since both operands are `falsy`, the expression `left() || right();` evaluates to the value of the right operand, which is `undefined`.
+
+Therefore, the output of this code will be:
+
+`left` `right`
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
