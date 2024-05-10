@@ -764,6 +764,49 @@ console.log("A" - "B" + 2);
 
 ##
 
+### Question 24:
+
+What will be the output for below javascript code?
+
+```javascript
+function getValue1() {
+  this.value = 10;
+  function printValue() {
+    console.log(this.value);
+  }
+
+  printValue();
+}
+
+function getValue2() {
+  this.value = 10;
+  var printValue = () => {
+    console.log(this.value);
+  };
+
+  printValue();
+}
+
+var value = 20;
+new getValue1();
+new getValue2();
+```
+
+### Output:
+
+`undefined`
+`10`
+
+### Explanation:
+
+The provided JavaScript code demonstrates the concept of this keyword and its behavior in different contexts, specifically within regular functions and arrow functions.
+
+- In the `getValue1` function, `this.value` is assigned the value of `10`. However, inside the nested printValue function, the `this` keyword refers to the global object (window in browsers) because regular functions create their own this binding. When printValue is called, it logs the value of `this.value` from the global context, which is initially undefined (because no such property exists on the global object). Therefore, the output will be `undefined`.
+
+- In the `getValue2` function, this.value is assigned the value of `10`, similar to `getValue1`. However, the `printValue` function is defined as an arrow function. Arrow functions do not create their own this binding. Instead, they inherit the this value from the surrounding lexical scope, which in this case is the `getValue2` function. When `printValue` is called, it logs the value of `this.value` from the `getValue2` function's context, which is `10`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
