@@ -842,6 +842,51 @@ However, the interesting thing with the `&&` operator is that when an expression
 
 ##
 
+### Question 26:
+
+What will be the output for below javascript code?
+
+```javascript
+console.log(false == "0");
+console.log(false === "0");
+```
+
+### Output:
+
+`true`
+`false`
+
+### Explanation:
+
+In JavaScript, there are two sets of equality operators. The triple-equal operator `===` behaves like any traditional equality operator would: evaluates to true if the two expressions on either of its sides have the same type and the same value. The double-equal operator, however, tries to coerce the values before comparing them. It is therefore generally good practice to use the `===` rather than `==`. The same holds true for `!==` vs `!=`.
+
+##
+
+### Question 27:
+
+What will be the output for below javascript code?
+
+```javascript
+var a = {},
+  b = { key: "b" },
+  c = { key: "c" };
+
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]);
+```
+
+### Output:
+
+`456`
+
+### Explanation:
+
+When setting an object property, JavaScript will implicitly stringify the parameter value. In this case, since `b` and `c` are both objects, they will both be converted to `[object Object]`. As a result, `a[b]` and `a[c]` are both equivalent to `a["[object Object]"]` and can be used interchangeably. Therefore, setting or referencing `a[c]` is precisely the same as setting or referencing `a[b]`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
