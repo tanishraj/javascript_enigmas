@@ -929,6 +929,70 @@ console.log(c);
 
 ##
 
+### Question 29:
+
+What will be the output for below javascript code?
+
+```javascript
+var a = b();
+console.log(a);
+
+var c = d();
+function b() {
+  return c;
+}
+console.log(a);
+
+var d = function () {
+  return b();
+};
+console.log(d);
+```
+
+### Output:
+
+`3`
+
+`[1, 2, 3, 5]`
+
+`TypeError: Assignment to constant variable.`
+
+### Explanation:
+
+- The reason why the output is `3` is because the increment operation `a++` is performed before the `console.log(a)` statement. If the increment operator was used before the variable `(++a)`, it would return the incremented value `(3)`.
+
+- Even though `d` is a constant variable, the contents of the array can be modified. The constant nature of d only prevents re-assigning a new value to the variable itself, but it doesn't make the array immutable. Therefore, when you run this code, it will output: `[1, 2, 3, 5]`
+
+- Since `b` is a constant variable, b++ is trying to assign the incremented value to a constant. which is not allowed, since it will throw an error. `TypeError: Assignment to constant variable.`
+
+- And Since, we got an error in our program, 4 set of problem wont be executed. But if you will run that individually then it is going to output `[3]`
+
+##
+
+### Question 30:
+
+What will be the output for below javascript code?
+
+```javascript
+const promise = new Promise((resolve, reject) => resolve());
+promise.finally(() => console.log("cleanup"));
+promise.then(() => console.log("do me first!"));
+```
+
+### Output:
+
+`cleanup`
+
+`do me first!`
+
+### Explanation:
+
+- A promise is created and immediately resolved.
+- The `finally()` method is called, registering a callback for cleanup, the finally block of code will be executed once the promise is resolved.
+- Then `then()` will be executed, and as we know already that the promise is resolved, it will log the message `do me first!`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
