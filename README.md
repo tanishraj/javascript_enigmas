@@ -993,6 +993,35 @@ promise.then(() => console.log("do me first!"));
 
 ##
 
+### Question 31:
+
+What will be the output for below javascript code?
+
+```javascript
+const promise = new Promise((resolve, reject) => resolve());
+promise.finally(() => promise.finally(() => console.log("cleanup")));
+promise.then(() => console.log("do me first!"));
+```
+
+### Output:
+
+`do me first!`
+
+`cleanup`
+
+### Explanation:
+
+#### The order of execution is important here...
+
+- The Promise is resolved immediately.
+- The first `finally` callback is called, which calls the second `finally` callback.
+- The `then` callback is called after the first `finally` callback.
+- So, The `do me first!` is logged first because the then callback is called before the nested finally callback that logs `cleanup`.
+
+#### Note: It's worth nothing that the finally callback is typically used for cleanup operations or logging, and it doesn't affect the resolved value or the rejection reason of the Promise chain.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
