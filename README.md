@@ -1058,6 +1058,41 @@ Above code demonstrates that function declarations are hoisted to the top of the
 
 ##
 
+### Question 33:
+
+What will be the output for below javascript code?
+
+```javascript
+function foo() {
+  var a = 2;
+  function bar() {
+    console.log(a);
+  }
+  bar();
+}
+foo();
+```
+
+### Output:
+
+`2`
+
+### Explanation:
+
+The provided code demonstrates the concept of lexical scoping in JavaScript. Here's a breakdown of what's happening:
+
+- `function foo() { ... }` declares a function named `foo`.
+- Inside `foo`, the variable a is declared and assigned the value `2` using `var a = 2`;.
+- Another function named `bar` is declared inside foo using `function bar() { console.log(a) }`. The `bar` function logs the value of a to the console.
+- `bar();` is called, which executes the `console.log(a)` statement inside bar.
+- `foo();` is called, which triggers the execution of the `foo` function.
+
+When `bar()` is called inside `foo`, it can access the variable a because of lexical scoping. Lexical scoping means that a function has access to variables defined in its outer (parent) function scope, even after the outer function has finished executing.
+
+In this case, bar is defined inside the scope of `foo`, so it has access to the a variable declared in `foo`. Therefore, when `bar()` is called, it logs the value of a, which is `2`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
