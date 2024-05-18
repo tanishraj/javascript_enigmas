@@ -1093,6 +1093,50 @@ In this case, bar is defined inside the scope of `foo`, so it has access to the 
 
 ##
 
+### Question 34:
+
+What will be the output for below javascript code?
+
+```javascript
+setTimeout(function () {
+  console.log("d");
+}, 0);
+
+console.log("c");
+
+setTimeout(function () {
+  console.log("A");
+}, 2000);
+
+setTimeout(function () {
+  console.log("b");
+}, 1000);
+```
+
+### Output:
+
+`c` `d` `b` `A`
+
+### Explanation:
+
+- `setTimeout(function() { console.log('d'); }, 0);` schedules a function that logs `d` to be executed after a delay of `0` milliseconds (essentially, as soon as possible, but not immediately).
+- `console.log('c');` logs `c` to the console immediately.
+- `setTimeout(function() { console.log('A'); }, 2000);` schedules a function that logs `A` to be executed after a delay of `2000 milliseconds` (2 seconds).
+- `setTimeout(function() { console.log('b'); }, 1000);` schedules a function that logs `b` to be executed after a delay of `1000 milliseconds` (1 second).
+
+The order of execution is as follows:
+
+- `c` is logged immediately because it's not inside a setTimeout function.
+- `d` is logged next, even though it was scheduled with a delay of `0 milliseconds`. This is because the setTimeout callbacks are pushed into the Event Queue and are executed after the current execution stack is empty.
+- `b` is logged after a delay of `1 second`, as scheduled.
+- `A` is logged after a delay of `2 seconds`, as scheduled.
+
+It's important to note that setTimeout is an asynchronous operation, which means that the scheduled functions are not executed on the main execution thread. Instead, they are added to the Event Queue and executed when the main execution stack is empty.
+
+This behavior ensures that the execution of long-running tasks does not block the main thread, allowing the browser to remain responsive to user interactions and other events.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
