@@ -1022,6 +1022,42 @@ promise.then(() => console.log("do me first!"));
 
 ##
 
+### Question 32:
+
+What will be the output for below javascript code?
+
+```javascript
+function foo() {
+  console.log(1);
+}
+
+foo();
+
+foo = function () {
+  console.log(2);
+};
+```
+
+### Output:
+
+`1`
+
+### Explanation:
+
+The code you provided demonstrates a concept in JavaScript called "Function Hoisting." Here's a summary of what's happening:
+
+- `function foo() { console.log(1) }` declares a function named foo and assigns it a function expression that logs the number 1 to the console.
+- `foo();` calls the foo function, which outputs `1` in the console.
+- `foo = function() { console.log(2); }` attempts to reassign the foo variable with a new anonymous function expression that logs the number `2` to the console.
+
+However, due to Function Hoisting, the initial function declaration `function foo() { console.log(1) }` is hoisted to the top of the scope (in this case, the global scope) during the compilation phase. This means that when `foo();` is called, it executes the original foo function that logs `1`.
+
+After that, the reassignment `foo = function() { console.log(2); }` overwrites the original `foo` function with the new anonymous function expression. If you were to call `foo()` again after this reassignment, it would log `2` instead of `1`.
+
+Above code demonstrates that function declarations are hoisted to the top of their scope during the compilation phase, while function expressions are not hoisted until they are executed during the runtime phase.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
