@@ -1168,6 +1168,36 @@ Therefore, the output of this code will be `0`.
 
 ##
 
+### Question 36:
+
+What will be the output for below javascript code?
+
+```javascript
+var a;
+console.log(a);
+
+function test() {
+  a = 1;
+}
+test();
+
+console.log(a);
+```
+
+### Output:
+
+`undefined` `1`
+
+### Explanation:
+
+- The variable `a` is declared using `var a;`. Due to variable hoisting, this declaration is moved to the top of the scope (in this case, the global scope) during the compilation phase. However, the assignment is not hoisted, so a is initially `undefined`.
+- `console.log(a);` logs the current value of a, which is `undefined`.
+- The `test` function is declared. Function declarations are hoisted to the top of the scope in their entirety during the compilation phase.
+- `test();` calls the test function, which assigns the value `1` to the variable `a`.
+- `console.log(a);` logs the updated value of `a`, which is now `1`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
