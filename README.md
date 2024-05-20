@@ -1137,6 +1137,37 @@ This behavior ensures that the execution of long-running tasks does not block th
 
 ##
 
+### Question 35:
+
+What will be the output for below javascript code?
+
+```javascript
+var output = (function (x) {
+  delete x;
+  return x;
+})(0);
+
+console.log(output);
+```
+
+### Output:
+
+`0`
+
+### Explanation:
+
+- The code creates an immediately invoked function expression (IIFE) that takes a single parameter `x`. The IIFE is executed immediately, and the value `0` is passed as an argument.
+- Inside the IIFE, `delete x;` is executed. The delete operator is used to remove a property from an object or delete an element from an array. However, when used with a variable that holds a primitive value (like a number, string, or boolean), the delete operator has no effect. It doesn't delete the variable or its value.
+- The IIFE then returns the value of `x`, which is still `0` because the delete operation had no effect.
+- The returned value `0` is assigned to the variable output.
+- Finally, `console.log(output);` logs the value of output, which is `0`.
+
+the delete operator cannot remove variables that hold primitive values in JavaScript. It can only remove object properties or array elements. When used with a primitive value, it simply has no effect, and the value remains unchanged.
+
+Therefore, the output of this code will be `0`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
