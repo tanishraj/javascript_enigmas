@@ -1198,6 +1198,34 @@ console.log(a);
 
 ##
 
+### Question 37:
+
+What will be the output for below javascript code?
+
+```javascript
+foo();
+bar();
+
+var foo = function () {
+  console.log("foo");
+};
+
+function bar() {
+  console.log("bar");
+}
+```
+
+### Output:
+
+`TypeError: foo is not a function`
+
+### Explanation:
+
+- `foo();` is called before the `foo` function is declared or assigned. Due to variable hoisting, the variable `foo` is declared at the top of the scope and initialised with `undefined`. However, when the code tries to invoke `foo()` as a function, it throws a `TypeError: foo is not a function` because `foo` is `undefined` at this point, and `undefined` is not a `function`.
+- Since the error occurred in the program, the program will be terminated.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
