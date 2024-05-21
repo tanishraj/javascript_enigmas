@@ -1226,6 +1226,51 @@ function bar() {
 
 ##
 
+### Question 38:
+
+What will be the output for below javascript code?
+
+```javascript
+function a() {
+  for (var i = 0; i < 10; i++) {
+    setTimeout(() => {
+      console.log(i);
+    }, i * 1000);
+  }
+}
+a();
+```
+
+### Output:
+
+`10` (10 times on every second)
+
+### Explanation:
+
+The provided code demonstrates the behavior of closures and asynchronous execution in JavaScript. When you run this code, it will output the numbers from 0 to 9 with a delay of 1 second between each output. However, all the numbers will be printed one after another, instead of being printed with the expected delay.
+
+- The `a` function is called, which initiates the `for loop`.
+- Inside the loop, for each iteration, a new timeout is set using `setTimeout`. The `timeout` function is an arrow function that logs the value of `i` to the console.
+- The `setTimeout` function is asynchronous, which means it doesn't block the execution of the code. Instead, it schedules the callback function `(the arrow function () => { console.log(i); })` to be executed after the specified delay `(i * 1000 milliseconds)`.
+- The for loop continues to execute until it completes, incrementing the value of `i` for each iteration.
+- After the loop finishes, the `setTimeout` callbacks are executed one by one, but by this time, the value of `i` is already `10` (because the loop has completed).
+
+The reason why all the numbers are printed one after another is that the closures created by the setTimeout callbacks capture the same variable i, which is incremented during the loop. By the time the callbacks are executed, the value of i is 10 for all the callbacks, so they all log 10 to the console.
+
+To fix this issue and get the desired behavior (printing 0 after 0 seconds, 1 after 1 second, 2 after 2 seconds, and so on), you need to create a new scope for each iteration of the loop. One way to achieve this is by using an immediately invoked function expression (IIFE) or by using let instead of var (since let has block-level scope):
+
+```javascript
+function a() {
+  for (let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      console.log(i);
+    }, i * 1000);
+  }
+}
+
+a();
+```
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
