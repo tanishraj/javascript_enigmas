@@ -1271,6 +1271,49 @@ function a() {
 a();
 ```
 
+##
+
+### Question 39:
+
+What will be the output for below javascript code?
+
+```javascript
+let b = {
+  x: 10,
+  y: 20
+};
+let a = JSON.parse(JSON.stringify(b));
+a.x = 20;
+console.log(a);
+console.log(b);
+```
+
+### Output:
+
+`{x: 20, y: 20}` `{x: 20, y: 20}`
+
+### Explanation:
+
+- `let b = { x: 10, y: 20 }` creates an object b with two properties: `x` and `y`.
+- `let a = JSON.parse(JSON.stringify(b));` creates a deep copy of `b` and assigns it to `a`. Here's how it works:
+
+  - `JSON.stringify(b)` converts the object `b` into a JSON string representation: `'{"x":10,"y":20}'`.
+  - `JSON.parse()` takes this JSON string and converts it back into a JavaScript object, creating a new object with the same properties and values as `b`.
+
+- This process creates a new object in memory, separate from the original `b` object.
+
+- `a.x = 20;` modifies the x property of the a object, but it doesn't affect the b object because a is a separate copy.
+- `console.log(a); outputs { x: 20, y: 20 }`, reflecting the change made to `a.x`.
+- `console.log(b); outputs { x: 10, y: 20 }`, showing that `b` remains unchanged.
+
+The `JSON.parse(JSON.stringify(...))` technique is a common way to create a deep copy of an object in JavaScript. However, it has some limitations:
+
+- It doesn't work for objects that contain circular references or methods (functions).
+- It doesn't preserve the prototype chain or object class (the copied object will be a plain object {}).
+- It doesn't preserve data types like `Date`, `RegExp`, or `undefined` values (they are converted to their string representations).
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
