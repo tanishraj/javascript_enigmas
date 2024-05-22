@@ -1314,6 +1314,59 @@ The `JSON.parse(JSON.stringify(...))` technique is a common way to create a deep
 
 ##
 
+### Question 40:
+
+What will be the output for below javascript code?
+
+```javascript
+function main() {
+  var a = 1000;
+  let b = 100;
+  if (true) {
+    var a = "tanish";
+    let b = "javascript";
+    console.log(a);
+    console.log(b);
+  }
+  console.log(a);
+  console.log(b);
+}
+main();
+```
+
+### Output:
+
+`tanish` `javascript` `tanish` `100`
+
+### Explanation:
+
+The provided code demonstrates the behavior of variable hoisting and block-level scoping in JavaScript.
+
+1 - The function `main` is defined and declared.
+
+2 - Inside `main`, the variable `a` is declared with `var` and initialized to `1000`. Due to variable hoisting, this declaration is moved to the top of the function scope during the compilation phase.
+
+3 - The variable `b` is declared with `let` and initialized to `100`. `let` variables have block-level scope and are not hoisted.
+
+4 - Inside the `if` (true) block:
+
+- A new variable `a` is declared with `var`. However, because of variable hoisting, this doesn't create a new variable; instead, it reassigns the existing a variable to the string `tanish`.
+- A new variable `b` is declared with `let` and initialized to `javascript`. This `b` is a different variable from the outer `b` due to block-level scoping.
+- `console.log(a)` outputs `tanish` because `a` was reassigned inside the block.
+- `console.log(b)` outputs `javascript` because it accesses the inner `b` variable.
+
+5 - Outside the `if` block:
+
+- `console.log(a)` outputs `tanish` because the reassignment of `a` inside the block persisted due to variable hoisting.
+- `console.log(b)` outputs `100` because it accesses the outer `b` variable, as the inner `b` variable has block-level scope and is not accessible outside the `if` block.
+
+This code demonstrates that:
+
+- Variables declared with var are function-scoped and can be reassigned within the same scope, even if they are declared multiple times.
+- Variables declared with let have block-level scope and are not hoisted. A new let variable inside a block creates a new binding, separate from outer variables with the same name.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
