@@ -1367,6 +1367,37 @@ This code demonstrates that:
 
 ##
 
+### Question 41:
+
+What will be the output for below javascript code?
+
+```javascript
+f1();
+f2();
+function f1() {
+  console.log("f1 executed");
+}
+
+var f2 = function () {
+  console.log("f2 executed");
+};
+```
+
+### Output:
+
+`f1 executed`
+
+`Uncaught TypeError: f2 is not a function`
+
+### Explanation:
+
+- `f1();` is called before its declaration. Due to function hoisting, the entire function `f1` is hoisted to the top of the scope (in this case, the global scope) during the compilation phase. Therefore, when `f1();` is called, it correctly logs `f1 executed`.
+- `f2();` is called before its declaration. However, only the variable declaration `var f2;` is hoisted to the top of the scope due to variable hoisting. The assignment `f2 = function() { ... }` is not hoisted. As a result, when `f2();` is called, `f2` is still undefined, and attempting to invoke an undefined value as a function throws a TypeError: `f2 is not a function`.
+- After the hoisting, the function declaration function `f1() { ... }` is executed, defining the `f1` function in memory.
+- Finally, the variable assignment `var f2 = function() { ... }` is executed, assigning the function expression to the variable `f2`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
