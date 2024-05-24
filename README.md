@@ -1457,6 +1457,44 @@ for (let i = 0; i < a.length; i++) {
 
 ##
 
+### Question 43:
+
+What will be the output for below javascript code?
+
+```javascript
+function callMe(delay) {
+  setTimeout(() => {
+    console.log("Called");
+  }, delay);
+}
+
+const delays = [500, 1000, 1500];
+
+for (let delay of delays) {
+  callMe(delay);
+}
+
+console.log("Completed");
+```
+
+### Output:
+
+`2` `3` `4` `7`
+
+and after 5 seconds
+
+`undefined` `undefined` `undefined` `undefined`
+
+### Explanation:
+
+- The `console.log('Completed');` statement is executed immediately after the for loop finishes because it is not inside an asynchronous callback function.
+- The `setTimeout` functions scheduled inside callMe are added to the Event Queue, and they will be executed asynchronously once the main execution thread is available.
+- The delay of `500 milliseconds (0.5 seconds)` for the first `setTimeout` expires first, so `Called` is logged to the `console`.
+- After another `500 milliseconds (1 second in total)`, the second `setTimeout` with a delay of `1000 milliseconds` expires, and `Called` is logged again.
+- Finally, after another `500 milliseconds (1.5 seconds in total)`, the third `setTimeout` with a delay of `1500 milliseconds` expires, and `Called` is logged for the third time.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
