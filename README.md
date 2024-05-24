@@ -1398,6 +1398,65 @@ var f2 = function () {
 
 ##
 
+### Question 42:
+
+What will be the output for below javascript code?
+
+```javascript
+var a = [2, 3, 4, 7];
+for (var i = 0; i < a.length; i++) {
+  console.log(a[i]);
+  setTimeout(() => {
+    console.log(a[i]);
+  }, 5000);
+}
+```
+
+### Output:
+
+`2` `3` `4` `7`
+
+and after 5 seconds
+
+`undefined` `undefined` `undefined` `undefined`
+
+### Explanation:
+
+- `var a = [2, 3, 4, 7];` will create a variable and initialise an array of values.
+- `for (var i = 0; i < a.length; i++)` will iterate over all the values of array `a`.
+- `console.log(a[i]);` will print the value from the array for the given iteration index.
+- `setTimeout()` method will be executed after 5 seconds and then whatever the value of `a[i]` would be there will be print on the console.
+
+In this case, Line #3, will log the array values as `2` `3` `4` `7` but as soon as value of `i` reaches to 4, for loop wont be executed because the condition fails, and then after 5 seconds the values of `a[i]` which is `a[4]` i.e `undefined` will be logged.
+
+#### Workaround to fix the issue:
+
+```javascript
+var a = [2, 3, 4, 7];
+for (var i = 0; i < a.length; i++) {
+  ((i) => {
+    console.log(a[i]);
+    setTimeout(() => {
+      console.log(a[i]);
+    }, 5000);
+  })(i);
+}
+```
+
+#### Another workaround is:
+
+```javascript
+var a = [2, 3, 4, 7];
+for (let i = 0; i < a.length; i++) {
+  console.log(a[i]);
+  setTimeout(() => {
+    console.log(a[i]);
+  }, 5000);
+}
+```
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
