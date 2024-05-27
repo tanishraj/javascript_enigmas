@@ -1495,6 +1495,38 @@ and after 5 seconds
 
 ##
 
+### Question 44:
+
+What will be the output for below javascript code?
+
+```javascript
+let randomValue = { name: "Lydia" };
+randomValue = 23;
+
+if (!typeof randomValue === "string") {
+  console.log("It's not a string!");
+} else {
+  console.log("Yay it's a string!");
+}
+```
+
+### Output:
+
+`Yay it's a string!`
+
+### Explanation:
+
+- `let randomValue = { name: "Lydia" }` declares a variable `randomValue` and initializes it with an object `{ name: "Lydia" }`.
+- `randomValue = 23` reassigns the value of `randomValue` to the number `23`.
+- `!typeof randomValue === "string"` is an expression that evaluates to false because:
+  - `typeof randomValue` evaluates to `number` since `randomValue` is now `23`.
+  - The `!` operator negates the result, since "number" is a truthy value and `!` making truthy value evaluate to `false`.
+  - `false === "string"` evaluates to false.
+- Since the condition `!typeof randomValue === "string"` evaluates to `false`, the code block inside the `else` statement is executed.
+- `console.log("Yay it's a string!")` logs the string `Yay it's a string!` to the console.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
