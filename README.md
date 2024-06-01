@@ -1646,6 +1646,40 @@ The updateEmail function is an arrow function, and is not bound to the user obje
 
 ##
 
+### Question 49:
+
+What will be the output for below javascript code?
+
+```javascript
+const fruit = ["🍌", "🍊", "🍎"];
+
+fruit.slice(0, 1);
+fruit.splice(0, 1);
+fruit.unshift("🍇");
+
+console.log(fruit);
+```
+
+### Output:
+
+`['🍇', '🍊', '🍎']`
+
+### Explanation:
+
+1. `const fruit = ['🍌', '🍊', '🍎']`: This line initializes an array `fruit` with three elements: banana, orange, and apple emojis.
+
+2. `fruit.slice(0, 1)`: This method creates a new array containing a shallow copy of a portion of the original array `fruit`. In this case, it creates a new array with the first element (`['🍌']`). However, since `slice` doesn't modify the original array, there's no visible output.
+
+3. `fruit.splice(0, 1)`: This method changes the contents of the original array `fruit` by removing elements from it. The first argument `0` specifies the starting index, and the second argument `1` specifies the number of elements to remove. In this case, it removes the first element (`'🍌'`) from the array `fruit`, modifying it to `['🍊', '🍎']`.
+
+4. `fruit.unshift('🍇')`: This method inserts a new element (`'🍇'`) at the beginning of the array `fruit`. After this operation, the array becomes `['🍇', '🍊', '🍎']`.
+
+5. `console.log(fruit)`: This line logs the current state of the `fruit` array to the console, which is `['🍇', '🍊', '🍎']`.
+
+So, the final output after executing all the operations on the `fruit` array is `['🍇', '🍊', '🍎']`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
