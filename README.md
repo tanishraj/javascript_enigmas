@@ -1680,6 +1680,58 @@ So, the final output after executing all the operations on the `fruit` array is 
 
 ##
 
+### Question 50:
+
+What will be the output for below javascript code?
+
+```javascript
+const user = {
+  email: "e@mail.com",
+  password: "12345"
+};
+
+const updateUser = ({ email, password }) => {
+  if (email) {
+    Object.assign(user, {
+      email
+    });
+  }
+
+  if (password) {
+    user.password = password;
+  }
+
+  return user;
+};
+
+const updatedUser = updateUser({
+  email: "new@email.com"
+});
+
+console.log(updatedUser === user);
+```
+
+### Output:
+
+`true`
+
+### Explanation:
+
+- The `user` object is initialized with two properties: `email` and `password`.
+- The `updateUser` function takes an object as an argument and uses object destructuring to extract the `email` and `password` properties.
+- Inside the `updateUser` function:
+  - If an `email` is provided, it updates the `user` object's `email` property using `Object.assign`.
+  - If a `password` is provided, it updates the `user` object's `password` property directly.
+  - Finally, it returns the `user` object.
+- The `updatedUser` variable is assigned the result of calling `updateUser` with an object that has a new `email` value.
+- The last line `console.log(updatedUser === user)` compares the `updatedUser` object with the `user` object using the strict equality operator `===`.
+
+The output of this code will be: `true`
+
+This is because the `updateUser` function modifies the original `user` object directly, and `updatedUser` is just a reference to the same object. When objects are compared using the strict equality operator `===`, it checks if they refer to the same object in memory. Since `updatedUser` and `user` point to the same object, the comparison returns `true`.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
