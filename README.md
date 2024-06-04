@@ -1732,6 +1732,47 @@ This is because the `updateUser` function modifies the original `user` object di
 
 ##
 
+### Question 51:
+
+What will be the output for below javascript code?
+
+```javascript
+class Calc {
+  constructor() {
+    this.count = 0;
+  }
+
+  increase() {
+    this.count++;
+  }
+}
+
+const calc = new Calc();
+new Calc().increase();
+
+console.log(calc.count);
+```
+
+### Output:
+
+`0`
+
+### Explanation:
+
+1. The `Calc` class is defined with a constructor method that initializes the `count` property to `0`.
+2. The `increase` method is defined within the `Calc` class, which increments the `count` property by 1.
+3. An instance of the `Calc` class is created and assigned to the `calc` variable using `const calc = new Calc()`. This creates a new object with the `count` property set to `0`.
+4. A new instance of the `Calc` class is created with `new Calc()`, and the `increase` method is called on that instance using `.increase()`. This increments the `count` property of the new instance by 1, but it does not affect the `count` property of the `calc` instance.
+5. The `console.log(calc.count)` line logs the value of the `count` property of the `calc` instance to the console.
+
+The output of this code will be: 0
+
+This is because when you create a new instance of the `Calc` class with `new Calc().increase()`, it creates a separate instance from the `calc` instance. The `increase` method is called on this new instance, incrementing its `count` property, but it does not affect the `count` property of the `calc` instance.
+
+Therefore, when `console.log(calc.count)` is executed, it prints `0` because the `count` property of the `calc` instance was never incremented.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
