@@ -1773,6 +1773,43 @@ Therefore, when `console.log(calc.count)` is executed, it prints `0` because the
 
 ##
 
+### Question 52:
+
+What will be the output for below javascript code?
+
+```javascript
+function getFruit(fruits) {
+  console.log(fruits?.[1]?.[1]);
+}
+
+getFruit([["🍊", "🍌"], ["🍍"]]);
+getFruit();
+getFruit([["🍍"], ["🍊", "🍌"]]);
+```
+
+### Output:
+
+`undefined` `undefined` `🍌`
+
+### Explanation:
+
+1. The `getFruit` function takes an optional `fruits` parameter, which is expected to be an array of arrays.
+2. Inside the function, the expression `fruits?.[1]?.[1]` uses optional chaining to safely access the elements of the nested arrays.
+
+- The first `?.[1]` attempts to access the second element (index 1) of the outer array `fruits`. If `fruits` is `null` or `undefined`, the expression short-circuits and returns `undefined`.
+- The second `?.[1]` attempts to access the second element (index 1) of the array retrieved from the first step. If the previous step returned `undefined`, the expression short-circuits and returns `undefined`.
+
+3. The `console.log` statement logs the value obtained from the optional chaining expression.
+4. The function is called three times with different arguments:
+
+- `getFruit([['🍊', '🍌'], ['🍍']])`: This call logs `undefined` because the second element of the inner array `['🍍']` does not exist.
+- `getFruit()`: This call logs `undefined` because `fruits` is `undefined`, causing the optional chaining expression to short-circuit.
+- `getFruit([['🍍'], ['🍊', '🍌']])`: This call logs `'🍌'` because the second element of the second inner array `['🍊', '🍌']` is '🍌'.
+
+The output of this code will be: `undefined` `undefined` `🍌`
+
+The optional chaining operator `?.` is a safe way to access nested properties or elements of an object or array. It provides a short-circuit behavior that prevents errors when accessing `null` or `undefined` values, making it easier to handle potentially missing or undefined data.
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
