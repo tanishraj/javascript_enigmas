@@ -1810,6 +1810,62 @@ The output of this code will be: `undefined` `undefined` `🍌`
 
 The optional chaining operator `?.` is a safe way to access nested properties or elements of an object or array. It provides a short-circuit behavior that prevents errors when accessing `null` or `undefined` values, making it easier to handle potentially missing or undefined data.
 
+##
+
+### Question 53:
+
+What will be the output for below javascript code?
+
+```javascript
+class Bird {
+  constructor() {
+    console.log("I'm a bird. 🦢");
+  }
+}
+
+class Flamingo extends Bird {
+  constructor() {
+    console.log("I'm pink. 🌸");
+    super();
+  }
+}
+
+const pet = new Flamingo();
+```
+
+### Output:
+
+`I'm pink. 🌸` `I'm a bird. 🦢`
+
+### Explanation:
+
+- The `Bird` class is defined with a constructor that logs the message `"I'm a bird. 🦢"`.
+- The `Flamingo` class is defined as a subclass that extends the `Bird` class using the `extends` keyword.
+- Inside the `Flamingo` class, a constructor is defined.
+- Inside the `Flamingo` constructor, the first statement logs the message `"I'm pink. 🌸"`.
+- The `super()` call is made inside the `Flamingo` constructor. This invokes the constructor of the parent class (`Bird`).
+- An instance of the `Flamingo` class is created using `const pet = new Flamingo()`.
+
+The output of this code will be:
+
+`I'm pink. 🌸`
+
+`I'm a bird. 🦢`
+
+Here's what happens when `const pet = new Flamingo()` is executed:
+
+1. The `new` keyword is used to create a new instance of the `Flamingo` class.
+2. The `Flamingo` constructor is called.
+3. Inside the `Flamingo` constructor, the statement `console.log("I'm pink. 🌸")` is executed, and `"I'm pink. 🌸"` is logged to the console.
+4. The `super()` call is made, which invokes the constructor of the parent class (`Bird`).
+5. Inside the `Bird` constructor, the statement `console.log("I'm a bird. 🦢")` is executed, and `"I'm a bird. 🦢"` is logged to the console.
+
+In JavaScript, when creating a subclass that extends a parent class, the `super()` method must be called before accessing `this` or returning from the constructor. This ensures that the parent class's constructor is executed and the instance is properly initialized.
+
+In this example, the `Flamingo` class inherits from the `Bird` class, and the `super()` call ensures that the `Bird` constructor is executed after the `Flamingo` constructor's initial log statement.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
