@@ -1866,6 +1866,64 @@ In this example, the `Flamingo` class inherits from the `Bird` class, and the `s
 
 ##
 
+### Question 54:
+
+What will be the output for below javascript code?
+
+```javascript
+const person = {
+  name: "Lydia Hallie",
+  hobbies: ["coding"]
+};
+
+function addHobby(hobby, hobbies = person.hobbies) {
+  hobbies.push(hobby);
+  return hobbies;
+}
+
+addHobby("running", []);
+addHobby("dancing");
+addHobby("baking", person.hobbies);
+
+console.log(person.hobbies);
+```
+
+### Output:
+
+`['coding', 'dancing', 'baking']`
+
+### Explanation:
+
+1. An object `person` is defined with two properties: `name` (a string) and `hobbies` (an array containing one hobby, `'coding'`).
+2. A function `addHobby` is defined that takes two parameters:
+
+- `hobby`: the new hobby to be added.
+- `hobbies`: an array of hobbies with a default value of `person.hobbies`.
+
+3. Inside the `addHobby` function:
+
+- The `hobby` is pushed into the `hobbies` array.
+- The modified `hobbies` array is returned.
+
+4. `addHobby('running', [])`: This call creates a new empty array `[]` and passes it as the `hobbies` argument. The function adds `'running'` to this new array and returns `['running']`. However, this doesn't affect `person.hobbies`.
+5. `addHobby('dancing')`: This call uses the default value `person.hobbies` for the `hobbies` parameter. `'dancing'` is added to `person.hobbies`, so now `person.hobbies` is `['coding', 'dancing']`.
+6. `addHobby('baking', person.hobbies)`: This call explicitly passes `person.hobbies` as the `hobbies` argument. `'baking'` is added to `person.hobbies`, so now `person.hobbies` is `['coding', 'dancing', 'baking']`.
+7. `console.log(person.hobbies)`: This logs the current value of `person.hobbies` to the console.
+
+The output of this code will be:
+`['coding', 'dancing', 'baking']`
+
+The key point here is that in JavaScript, objects (including arrays) are passed by reference. When you pass `person.hobbies` as an argument or use it as the default value, any modifications to `hobbies` inside the `addHobby` function will directly affect `person.hobbies`.
+
+In this case:
+
+- The first call to `addHobby` doesn't affect `person.hobbies` because a new empty array is provided.
+- The second and third calls modify `person.hobbies` directly, adding `'dancing'` and `'baking'` respectively.
+
+This demonstrates how default parameters and object mutations can lead to side effects in functions.
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
