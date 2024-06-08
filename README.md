@@ -1924,6 +1924,39 @@ This demonstrates how default parameters and object mutations can lead to side e
 
 ##
 
+### Question 55:
+
+What will be the output for below javascript code?
+
+```javascript
+class Counter {
+  #number = 10;
+
+  increment() {
+    this.#number++;
+  }
+
+  getNum() {
+    return this.#number;
+  }
+}
+
+const counter = new Counter();
+counter.increment();
+
+console.log(counter.#number);
+```
+
+### Output:
+
+`11`
+
+### Explanation:
+
+In ES2020 (ECMAScript 2020), JavaScript introduced the concept of private class fields using the `#` symbol. This feature provides true privacy for class properties, a capability that was previously simulated using naming conventions like prefixing properties with an underscore (`_`).
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
