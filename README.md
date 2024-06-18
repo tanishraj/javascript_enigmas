@@ -11,7 +11,7 @@ What will be the output for below javascript code?
 
 ```javascript
 var a = 10;
-var b = "10";
+var b = '10';
 console.log(a == b);
 ```
 
@@ -30,21 +30,21 @@ console.log(a == b);
 What will be the output for below javascript code?
 
 ```javascript
-console.log("start");
+console.log('start');
 
 const fn = () =>
   new Promise((resolve, reject) => {
     console.log(1);
-    resolve("success");
+    resolve('success');
   });
 
-console.log("middle");
+console.log('middle');
 
 fn().then((res) => {
   console.log(res);
 });
 
-console.log("end");
+console.log('end');
 ```
 
 ### Output:
@@ -79,11 +79,11 @@ So, below are the order the output will be printed...
 What will be the output for below javascript code?
 
 ```javascript
-const a = [{ name: "John" }, { name: "Jane" }];
+const a = [{ name: 'John' }, { name: 'Jane' }];
 
 const b = [...a];
 
-b[0] = { name: "Oliver" };
+b[0] = { name: 'Oliver' };
 b[1].age = 30;
 
 console.log(a);
@@ -202,9 +202,9 @@ console.log(obj.prop);
 What will be the output for below javascript code?
 
 ```javascript
-console.log("5" - "3");
-console.log("5" - 3);
-console.log(5 - "3");
+console.log('5' - '3');
+console.log('5' - 3);
+console.log(5 - '3');
 ```
 
 ### Output:
@@ -250,10 +250,10 @@ When the return statement is encountered in the `doSomething` function, the func
 What will be the output for below javascript code?
 
 ```javascript
-console.log(false ?? "Some Truthy Value");
-console.log(undefined ?? "Some Truthy Value");
-console.log(null ?? "Some Truthy Value");
-console.log(NaN ?? "Some Truthy Value");
+console.log(false ?? 'Some Truthy Value');
+console.log(undefined ?? 'Some Truthy Value');
+console.log(null ?? 'Some Truthy Value');
+console.log(NaN ?? 'Some Truthy Value');
 ```
 
 ### Output:
@@ -276,12 +276,12 @@ So whenever the left operand is either `undefined` or `null` it will return the 
 What will be the output for below javascript code?
 
 ```javascript
-console.log(false || "Some Truthy Value");
-console.log(undefined || "Some Truthy Value");
-console.log(null || "Some Truthy Value");
-console.log(NaN || "Some Truthy Value");
+console.log(false || 'Some Truthy Value');
+console.log(undefined || 'Some Truthy Value');
+console.log(null || 'Some Truthy Value');
+console.log(NaN || 'Some Truthy Value');
 console.log(NaN || NaN || false);
-console.log(true || "Some Truthy Value" || false);
+console.log(true || 'Some Truthy Value' || false);
 ```
 
 ### Output:
@@ -362,10 +362,10 @@ What will be the output for below javascript code?
   var a = (b = 3);
 })();
 
-console.log("a defined? " + (typeof a !== undefined));
-console.log("b defined? " + (typeof b !== undefined));
-console.log("b value is ", b);
-console.log("a value is ", a);
+console.log('a defined? ' + (typeof a !== undefined));
+console.log('b defined? ' + (typeof b !== undefined));
+console.log('b value is ', b);
+console.log('a value is ', a);
 ```
 
 ### Output:
@@ -394,14 +394,14 @@ What will be the output for below javascript code?
 
 ```javascript
 var myObject = {
-  foo: "bar",
+  foo: 'bar',
   func: function () {
     var self = this;
-    console.log("outer func:  this.foo = " + this.foo);
-    console.log("outer func:  self.foo = " + self.foo);
+    console.log('outer func:  this.foo = ' + this.foo);
+    console.log('outer func:  self.foo = ' + self.foo);
     (function () {
-      console.log("inner func:  this.foo = " + this.foo);
-      console.log("inner func:  self.foo = " + self.foo);
+      console.log('inner func:  this.foo = ' + this.foo);
+      console.log('inner func:  self.foo = ' + self.foo);
     })();
   }
 };
@@ -433,20 +433,20 @@ What will be the output for below javascript code?
 ```javascript
 function foo1() {
   return {
-    bar: "hello"
+    bar: 'hello'
   };
 }
 
 function foo2() {
   return;
   {
-    bar: "hello";
+    bar: 'hello';
   }
 }
 
-console.log("foo1 returns:");
+console.log('foo1 returns:');
 console.log(foo1());
-console.log("foo2 returns:");
+console.log('foo2 returns:');
 console.log(foo2());
 ```
 
@@ -475,7 +475,7 @@ What will be the output for below javascript code?
 ```javascript
 console.log(Boolean([]));
 console.log(Boolean({}));
-console.log(Boolean(""));
+console.log(Boolean(''));
 console.log(Boolean(0));
 ```
 
@@ -507,11 +507,11 @@ What will be the output for below javascript code?
 
 ```javascript
 function left() {
-  return console.log("left");
+  return console.log('left');
 }
 
 function right() {
-  return console.log("right");
+  return console.log('right');
 }
 
 left() || right();
@@ -608,7 +608,7 @@ Closures allow functions to have private variables and maintain state across mul
 What will be the output for below javascript code?
 
 ```javascript
-const greeting = "hello";
+const greeting = 'hello';
 greeting.length = 10;
 console.log(greeting.length);
 console.log(greeting);
@@ -684,12 +684,12 @@ When a value of zero is passed as the second argument to `setTimeout()`, it atte
 What will be the output for below javascript code?
 
 ```javascript
-var arr1 = "john".split("");
+var arr1 = 'john'.split('');
 var arr2 = arr1.reverse();
-var arr3 = "jones".split("");
+var arr3 = 'jones'.split('');
 arr2.push(arr3);
-console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1));
-console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1));
+console.log('array 1: length=' + arr1.length + ' last=' + arr1.slice(-1));
+console.log('array 2: length=' + arr2.length + ' last=' + arr2.slice(-1));
 ```
 
 ### Output:
@@ -719,12 +719,12 @@ And a couple of side points here that can sometimes trip someone up in answering
 What will be the output for below javascript code?
 
 ```javascript
-console.log(1 + "2" + "2");
-console.log(1 + +"2" + "2");
-console.log(1 + -"1" + "2");
-console.log(+"1" + "1" + "2");
-console.log("A" - "B" + "2");
-console.log("A" - "B" + 2);
+console.log(1 + '2' + '2');
+console.log(1 + +'2' + '2');
+console.log(1 + -'1' + '2');
+console.log(+'1' + '1' + '2');
+console.log('A' - 'B' + '2');
+console.log('A' - 'B' + 2);
 ```
 
 ### Output:
@@ -812,10 +812,10 @@ The provided JavaScript code demonstrates the concept of this keyword and its be
 What will be the output for below javascript code?
 
 ```javascript
-console.log("0 || 1 = " + (0 || 1));
-console.log("1 || 2 = " + (1 || 2));
-console.log("0 && 1 = " + (0 && 1));
-console.log("1 && 2 = " + (1 && 2));
+console.log('0 || 1 = ' + (0 || 1));
+console.log('1 || 2 = ' + (1 || 2));
+console.log('0 && 1 = ' + (0 && 1));
+console.log('1 && 2 = ' + (1 && 2));
 ```
 
 ### Output:
@@ -847,8 +847,8 @@ However, the interesting thing with the `&&` operator is that when an expression
 What will be the output for below javascript code?
 
 ```javascript
-console.log(false == "0");
-console.log(false === "0");
+console.log(false == '0');
+console.log(false === '0');
 ```
 
 ### Output:
@@ -868,8 +868,8 @@ What will be the output for below javascript code?
 
 ```javascript
 var a = {},
-  b = { key: "b" },
-  c = { key: "c" };
+  b = { key: 'b' },
+  c = { key: 'c' };
 
 a[b] = 123;
 a[c] = 456;
@@ -975,8 +975,8 @@ What will be the output for below javascript code?
 
 ```javascript
 const promise = new Promise((resolve, reject) => resolve());
-promise.finally(() => console.log("cleanup"));
-promise.then(() => console.log("do me first!"));
+promise.finally(() => console.log('cleanup'));
+promise.then(() => console.log('do me first!'));
 ```
 
 ### Output:
@@ -999,8 +999,8 @@ What will be the output for below javascript code?
 
 ```javascript
 const promise = new Promise((resolve, reject) => resolve());
-promise.finally(() => promise.finally(() => console.log("cleanup")));
-promise.then(() => console.log("do me first!"));
+promise.finally(() => promise.finally(() => console.log('cleanup')));
+promise.then(() => console.log('do me first!'));
 ```
 
 ### Output:
@@ -1099,17 +1099,17 @@ What will be the output for below javascript code?
 
 ```javascript
 setTimeout(function () {
-  console.log("d");
+  console.log('d');
 }, 0);
 
-console.log("c");
+console.log('c');
 
 setTimeout(function () {
-  console.log("A");
+  console.log('A');
 }, 2000);
 
 setTimeout(function () {
-  console.log("b");
+  console.log('b');
 }, 1000);
 ```
 
@@ -1207,11 +1207,11 @@ foo();
 bar();
 
 var foo = function () {
-  console.log("foo");
+  console.log('foo');
 };
 
 function bar() {
-  console.log("bar");
+  console.log('bar');
 }
 ```
 
@@ -1323,8 +1323,8 @@ function main() {
   var a = 1000;
   let b = 100;
   if (true) {
-    var a = "tanish";
-    let b = "javascript";
+    var a = 'tanish';
+    let b = 'javascript';
     console.log(a);
     console.log(b);
   }
@@ -1375,11 +1375,11 @@ What will be the output for below javascript code?
 f1();
 f2();
 function f1() {
-  console.log("f1 executed");
+  console.log('f1 executed');
 }
 
 var f2 = function () {
-  console.log("f2 executed");
+  console.log('f2 executed');
 };
 ```
 
@@ -1464,7 +1464,7 @@ What will be the output for below javascript code?
 ```javascript
 function callMe(delay) {
   setTimeout(() => {
-    console.log("Called");
+    console.log('Called');
   }, delay);
 }
 
@@ -1474,7 +1474,7 @@ for (let delay of delays) {
   callMe(delay);
 }
 
-console.log("Completed");
+console.log('Completed');
 ```
 
 ### Output:
@@ -1500,10 +1500,10 @@ and after 5 seconds
 What will be the output for below javascript code?
 
 ```javascript
-let randomValue = { name: "Lydia" };
+let randomValue = { name: 'Lydia' };
 randomValue = 23;
 
-if (!typeof randomValue === "string") {
+if (!typeof randomValue === 'string') {
   console.log("It's not a string!");
 } else {
   console.log("Yay it's a string!");
@@ -1534,7 +1534,7 @@ What will be the output for below javascript code?
 ```javascript
 const createMember = ({ email, address = {} }) => {
   const validEmail = /.+\@.+\..+/.test(email);
-  if (!validEmail) throw new Error("Valid email pls");
+  if (!validEmail) throw new Error('Valid email pls');
 
   return {
     email,
@@ -1543,7 +1543,7 @@ const createMember = ({ email, address = {} }) => {
 };
 
 const member = createMember({
-  email: "my@email.com"
+  email: 'my@email.com'
 });
 console.log(member);
 ```
@@ -1564,11 +1564,11 @@ What will be the output for below javascript code?
 
 ```javascript
 const animals = {};
-let dog = { emoji: "🐶" };
-let cat = { emoji: "🐈" };
+let dog = { emoji: '🐶' };
+let cat = { emoji: '🐈' };
 
-animals[dog] = { ...dog, name: "Mara" };
-animals[cat] = { ...cat, name: "Sara" };
+animals[dog] = { ...dog, name: 'Mara' };
+animals[cat] = { ...cat, name: 'Sara' };
 
 console.log(animals[dog]);
 ```
@@ -1594,10 +1594,10 @@ Logging `animals[dog]`, or actually `animals["[object Object]"]` since convertin
 What will be the output for below javascript code?
 
 ```javascript
-const promise1 = Promise.resolve("First");
-const promise2 = Promise.resolve("Second");
-const promise3 = Promise.reject("Third");
-const promise4 = Promise.resolve("Fourth");
+const promise1 = Promise.resolve('First');
+const promise2 = Promise.resolve('Second');
+const promise3 = Promise.reject('Third');
+const promise4 = Promise.resolve('Fourth');
 
 const runPromises = async () => {
   const res1 = await Promise.all([promise1, promise2]);
@@ -1626,13 +1626,13 @@ What will be the output for below javascript code?
 
 ```javascript
 const user = {
-  email: "my@email.com",
+  email: 'my@email.com',
   updateEmail: (email) => {
     this.email = email;
   }
 };
 
-user.updateEmail("new@email.com");
+user.updateEmail('new@email.com');
 console.log(user.email);
 ```
 
@@ -1651,11 +1651,11 @@ The updateEmail function is an arrow function, and is not bound to the user obje
 What will be the output for below javascript code?
 
 ```javascript
-const fruit = ["🍌", "🍊", "🍎"];
+const fruit = ['🍌', '🍊', '🍎'];
 
 fruit.slice(0, 1);
 fruit.splice(0, 1);
-fruit.unshift("🍇");
+fruit.unshift('🍇');
 
 console.log(fruit);
 ```
@@ -1686,8 +1686,8 @@ What will be the output for below javascript code?
 
 ```javascript
 const user = {
-  email: "e@mail.com",
-  password: "12345"
+  email: 'e@mail.com',
+  password: '12345'
 };
 
 const updateUser = ({ email, password }) => {
@@ -1705,7 +1705,7 @@ const updateUser = ({ email, password }) => {
 };
 
 const updatedUser = updateUser({
-  email: "new@email.com"
+  email: 'new@email.com'
 });
 
 console.log(updatedUser === user);
@@ -1782,9 +1782,9 @@ function getFruit(fruits) {
   console.log(fruits?.[1]?.[1]);
 }
 
-getFruit([["🍊", "🍌"], ["🍍"]]);
+getFruit([['🍊', '🍌'], ['🍍']]);
 getFruit();
-getFruit([["🍍"], ["🍊", "🍌"]]);
+getFruit([['🍍'], ['🍊', '🍌']]);
 ```
 
 ### Output:
@@ -1872,8 +1872,8 @@ What will be the output for below javascript code?
 
 ```javascript
 const person = {
-  name: "Lydia Hallie",
-  hobbies: ["coding"]
+  name: 'Lydia Hallie',
+  hobbies: ['coding']
 };
 
 function addHobby(hobby, hobbies = person.hobbies) {
@@ -1881,9 +1881,9 @@ function addHobby(hobby, hobbies = person.hobbies) {
   return hobbies;
 }
 
-addHobby("running", []);
-addHobby("dancing");
-addHobby("baking", person.hobbies);
+addHobby('running', []);
+addHobby('dancing');
+addHobby('baking', person.hobbies);
 
 console.log(person.hobbies);
 ```
@@ -1954,6 +1954,56 @@ console.log(counter.#number);
 ### Explanation:
 
 In ES2020 (ECMAScript 2020), JavaScript introduced the concept of private class fields using the `#` symbol. This feature provides true privacy for class properties, a capability that was previously simulated using naming conventions like prefixing properties with an underscore (`_`).
+
+##
+
+### Question 56:
+
+What will be the output for below javascript code?
+
+```javascript
+const obj = {
+  1: 'a',
+  1: 'b',
+  [1]: 'c'
+};
+
+console.log(obj['1']);
+```
+
+### Output:
+
+`c`
+
+### Explanation:
+
+In JavaScript, object keys are either strings or symbols. When a non-string key is used, it is converted to a string.
+
+In the given code, the object `obj` is defined with three keys:
+
+- `"1": "a"`
+- `1: "b"`
+- `[1]: "c"`
+
+However, `1` and `[1]` are numbers, which are automatically converted to the string `"1"`.
+
+This results in the object being defined as:
+
+```javascript
+const obj = {
+  1: 'c'
+};
+```
+
+Here's how the transformation happens step by step:
+
+1. `"1": "a"` - Adds a key `"1"` with value `"a"`.
+2. `1: "b"` - The key `1` is converted to the string `"1"`, thus it overwrites the previous value `"a"` with `"b"`.
+3. `[1]: "c"` - The expression `[1]` evaluates to `1`, which again is converted to the string `"1"`, overwriting the previous value `"b"` with `"c"`.
+
+So, when we access `obj["1"]`, the value is `"c"`.
+
+Therefore, the output is `c`.
 
 ##
 
