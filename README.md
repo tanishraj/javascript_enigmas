@@ -1963,7 +1963,7 @@ What will be the output for below javascript code?
 
 ```javascript
 const obj = {
-  1: 'a',
+  "1": 'a',
   1: 'b',
   [1]: 'c'
 };
