@@ -2007,35 +2007,6 @@ Therefore, the output is `c`.
 
 ##
 
-### Question 57:
-
-What will be the output for below javascript code?
-
-```javascript
-const languages = ['java', 'javasript'];
-
-const obj = {
-  ...languages
-};
-
-console.log(obj);
-
-console.log('javascript' in obj);
-console.log('1' in languages);
-```
-
-### Output:
-
-`false` `true`
-
-### Explanation:
-
-The `in` operator in `console.log("javascript" in obj);` checks if a property exists in an object. Here, it checks if `javascript` is a key in obj. Since obj has keys `0` and `1`, but not `javascript`, the output will be: `false`
-
-The `in` operator in `console.log("1" in languages);` checks if a property exists in an array. Here, it checks if the string "1" is a valid index in the languages array. Since languages has an element at index 1, the output will be: `true`
-
-##
-
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
