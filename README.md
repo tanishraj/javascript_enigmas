@@ -2036,6 +2036,26 @@ The `in` operator in `console.log("1" in languages);` checks if a property exist
 
 ##
 
+## Overview
+
+Some initial text that is always visible.
+
+<details>
+  <summary>Click to expand</summary>
+  
+  ## Expanded Content
+
+This content is hidden until you click "Click to expand". You can put more detailed information here, like additional documentation, examples, etc.
+
+```javascript
+// Example code block
+function example() {
+  console.log('Hello, world!');
+}
+```
+
+  </details>
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
