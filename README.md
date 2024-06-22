@@ -2321,6 +2321,31 @@ The `in` operator in `console.log("1" in languages);` checks if a property exist
 
 ##
 
+### Question 58:
+
+What will be the output for below javascript code?
+
+```javascript
+let a = [1, 2, 3, 4, 5, 6];
+a[a.length - 1]++;
+console.log(a);
+```
+
+<details>
+<summary>Click to view output</summary>
+
+### Output:
+
+`[1, 2, 3, 4, 5, 7]`
+
+### Explanation:
+
+Here, a.length - 1 calculates the index of the last element in the array, which is 5 (since array indices are zero-based and the array has 6 elements). So, a[5] refers to the last element, which is 6. The ++ operator increments this element by 1, changing its value from 6 to 7.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
