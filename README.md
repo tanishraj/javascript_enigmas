@@ -15,6 +15,8 @@ var b = '10';
 console.log(a == b);
 ```
 
+<details>
+<summary>Click to view output</summary>
 ### Output:
 
 `true`.
@@ -23,6 +25,7 @@ console.log(a == b);
 
 `==` operator in javascript only compares the values and not the type hence it will log `true`.
 
+</details>
 ##
 
 ### Question 2:
