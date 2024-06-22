@@ -17,6 +17,7 @@ console.log(a == b);
 
 <details>
 <summary>Click to view output</summary>
+
 ### Output:
 
 `true`.
@@ -26,6 +27,7 @@ console.log(a == b);
 `==` operator in javascript only compares the values and not the type hence it will log `true`.
 
 </details>
+
 ##
 
 ### Question 2:
@@ -49,6 +51,9 @@ fn().then((res) => {
 
 console.log('end');
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -75,6 +80,8 @@ So, below are the order the output will be printed...
 5. Log "end"
 6. Main thread is completed, now promise value will be printed "success"
 
+</details>
+
 ##
 
 ### Question 3:
@@ -93,6 +100,9 @@ console.log(a);
 console.log(b);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 a = `[ { name: 'John' }, { name: 'Jane', age: 30 } ]`
@@ -106,6 +116,8 @@ b = `[ { name: 'Oliver' }, { name: 'Jane', age: 30 } ]`
 3. `b[0] = {name: "Oliver"}` - Replacing the first object in variable `b` with a brand new object, without affecting the variable `a`.
 4. `b[1].age = 30;` - Now updating the second object inside variable `b` which is the reference of second object in variable `a`, will update the values in both `a` and `b` as they both are referencing to the same object.
 
+</details>
+
 ##
 
 ### Question 4:
@@ -118,6 +130,9 @@ var y = 2;
 console.log(x ** y);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `25`
@@ -125,6 +140,8 @@ console.log(x ** y);
 ### Explanation:
 
 The `**` operator is used for exponentiation in JavaScript. which is equal to `Math.pow(5,2)`. `**` is called exponential operator.
+
+</details>
 
 ##
 
@@ -140,6 +157,9 @@ function getTotal(...args) {
 getTotal(871);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `object`
@@ -147,6 +167,8 @@ getTotal(871);
 ### Explanation:
 
 When you use `...args` as a parameter, it creates an array named args within the function that will hold all the arguments passed to the function. So, even though you call `getTotal(871)`, the args array will still contain that single argument `(871)` as an array element. And as `typeof Array` is object.
+
+</details>
 
 ##
 
@@ -162,6 +184,9 @@ a.push(4);
 console.log(b.length);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `4`
@@ -172,6 +197,8 @@ console.log(b.length);
 2. `const b = a;` creates another constant variable named b and assigns the value of a to it. However, it's important to understand that this is not copying the array elements. Instead, it's creating a new reference (or alias) that points to the same array object in memory. Both a and b now refer to the same array.
 3. `a.push(4);` uses the push method to add the number 4 to the end of the array that a (and consequently b) refers to. Since a and b point to the same array, this modification affects both variables.
 4. `console.log(b.length);` logs the length of the array using b.length. Because a and b refer to the same modified array, this will print: `4`
+
+</details>
 
 ##
 
@@ -187,6 +214,9 @@ arr[0].prop = 20;
 console.log(obj.prop);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `20`
@@ -197,6 +227,8 @@ console.log(obj.prop);
 2. `const arr = [obj];` creates a constant array named `arr` and assigns a single element to it. That element is a reference to the obj object you created earlier. It's important to remember that you're not copying the object itself, but rather creating a new reference in the array that points to the same object in memory.
 3. `arr[0].prop = 20;` accesses the first element of the arr array (which is the reference to the obj object) and modifies the prop property within that object to have a value of `20`. Because `arr[0]` and obj both refer to the same object, this change is reflected in both.
 4. `console.log(obj.prop);` logs the value of the prop property within the obj object. Since you modified the property in step 3, this will print: `20`.
+
+</details>
 
 ##
 
@@ -210,6 +242,9 @@ console.log('5' - 3);
 console.log(5 - '3');
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `2` for all logs.
@@ -219,6 +254,8 @@ console.log(5 - '3');
 In JavaScript, the code console.log("5" - "3"); will output 2. This might seem complex at first, because subtraction typically deals with numbers. However, JavaScript has a behavior where it tries to convert operands (the values used in an operation) to a common type before performing the operation.
 
 In this example, JavaScript attempts to convert both "5" and "3" to numbers before performing the subtraction. Similarly, for all other instances it does the same thing.
+
+</details>
 
 ##
 
@@ -236,6 +273,9 @@ function doSomething() {
 console.log(doSomething());
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `undefined`
@@ -245,6 +285,8 @@ console.log(doSomething());
 In JavaScript, the automatic semicolon insertion (ASI) mechanism interprets the line break after return as the end of the statement, effectively treating it as `return;`. This means that the function returns undefined and the subsequent object literal is never reached.
 
 When the return statement is encountered in the `doSomething` function, the function immediately exits and returns `undefined` by default (if no value is explicitly returned). The object literal `{ success: true }` on the next line is never evaluated or returned because the function has already exited.
+
+</details>
 
 ##
 
@@ -259,6 +301,9 @@ console.log(null ?? 'Some Truthy Value');
 console.log(NaN ?? 'Some Truthy Value');
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `false`
@@ -271,6 +316,8 @@ console.log(NaN ?? 'Some Truthy Value');
 This is a concept of javascript called, `Nullish coalescing operator ??`. So as per `MDN` definition, The `nullish coalescing (??)` operator is a logical operator that returns its right-hand side operand when its left-hand side operand is `null` or `undefined`, and otherwise returns its left-hand side operand.
 
 So whenever the left operand is either `undefined` or `null` it will return the right operand as an output or else the left operand itself will be returned.
+
+</details>
 
 ##
 
@@ -287,6 +334,9 @@ console.log(NaN || NaN || false);
 console.log(true || 'Some Truthy Value' || false);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `Some Truthy Value`
@@ -300,6 +350,8 @@ console.log(true || 'Some Truthy Value' || false);
 
 The logical `OR operator (||)` evaluates the operands from left to right and returns the first `truthy` value it encounters. If no `truthy` value is found, it returns the last operand. This behaviour is often used for providing default values.
 
+</details>
+
 ##
 
 ### Question 12:
@@ -310,6 +362,9 @@ What will be the output for below javascript code?
 console.log(0.1 + 0.2);
 console.log(0.1 + 0.2 == 0.3);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -326,6 +381,8 @@ In most programming languages, including JavaScript, floating-point arithmetic o
 
 Due to the imprecise representation of floating-point numbers mentioned earlier, the result of `0.1 + 0.2` is not exactly equal to `0.3`. Therefore, when you run this line, the output in the console will be `false`.
 
+</details>
+
 ##
 
 ### Question 13:
@@ -337,6 +394,9 @@ let x = [0, 1, [2]];
 x[2][0] = 3;
 console.log(x);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -353,6 +413,8 @@ console.log(x);
 - After the modification, the nested array became `[3]`, and the overall `x` array became `[0, 1, [3]]`.
 
 - Finally, `console.log(x)` printed the updated value of `x`, which is `[0, 1, [3]]`.
+
+</details>
 
 ##
 
@@ -371,6 +433,9 @@ console.log('b value is ', b);
 console.log('a value is ', a);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `a defined? true`
@@ -388,6 +453,8 @@ Since both the `a` and `b` is defined inside the functional scope most of the de
 Most of the developers think, that `var a = b = 3` is equivalent to `var b = 3; var a = b;`. But thats not how javascript treats this statement. Instead, javascript treats this code as `b = 3; var a = b;`
 
 So, `b` is defined without `var` keyword so it will be accessible outside of the functional scope as it will be treated as a global variable but `a` is defined with `var` keyword it can not be accessed outside of the functional scope. and hence it will be `Reference Error`.
+
+</details>
 
 ##
 
@@ -411,6 +478,9 @@ var myObject = {
 myObject.func();
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `outer func:  this.foo = bar`
@@ -426,6 +496,8 @@ myObject.func();
 In the outer function, both `this` and `self` refer to `myObject` and therefore both can properly reference and access `foo`.
 
 In the inner function, though, this no longer refers to `myObject`. As a result, `this.foo` is `undefined` in the inner function, whereas the reference to the local variable `self` remains in scope and is accessible there.
+
+</details>
 
 ##
 
@@ -453,6 +525,9 @@ console.log('foo2 returns:');
 console.log(foo2());
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `foo1 returns:`
@@ -469,6 +544,8 @@ In JavaScript, the automatic semicolon insertion (ASI) mechanism interprets the 
 
 When the return statement is encountered in the `foo1()` function, the function immediately returns the `{ bar: "hello" }`. but in 'foo2()' `return` statement will be converted to `return;`, hence will return `undefined`.
 
+</details>
+
 ##
 
 ### Question 17:
@@ -481,6 +558,9 @@ console.log(Boolean({}));
 console.log(Boolean(''));
 console.log(Boolean(0));
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -502,6 +582,8 @@ console.log(Boolean(0));
 
 4 - The number `0` is considered a `falsy` value in JavaScript. When the Boolean function is called with 0, it returns false.
 
+</details>
+
 ##
 
 ### Question 18:
@@ -519,6 +601,9 @@ function right() {
 
 left() || right();
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -557,6 +642,8 @@ Therefore, the output of this code will be:
 
 `left` `right`
 
+</details>
+
 ##
 
 ### Question 19:
@@ -574,6 +661,9 @@ console.log(c());
 console.log(c());
 console.log(c());
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -604,6 +694,8 @@ This behavior is possible because the anonymous function returned by counter has
 
 Closures allow functions to have private variables and maintain state across multiple function calls. In this example, the counter function creates a new private count variable each time it is called, and the returned anonymous function has access to that private variable through the closure.
 
+</details>
+
 ##
 
 ### Question 20:
@@ -616,6 +708,9 @@ greeting.length = 10;
 console.log(greeting.length);
 console.log(greeting);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -641,6 +736,8 @@ In JavaScript, strings are immutable, which means their values cannot be changed
 - The length property of a string is read-only and reflects the actual number of characters in the string.
 - Attempting to modify the length property of a string has no effect, as it is a derived property based on the string's content.
 
+</details>
+
 ##
 
 ### Question 21:
@@ -659,6 +756,9 @@ What will be the output for below javascript code?
   console.log(4);
 })();
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -680,6 +780,8 @@ Similarly, `setTimeout()` also puts execution of its referenced function into th
 
 When a value of zero is passed as the second argument to `setTimeout()`, it attempts to execute the specified function “as soon as possible”. Specifically, execution of the function is placed on the event queue to occur on the next timer tick. Note, though, that this is not immediate; the function is not executed until the next tick. That’s why in the above example, the call to `console.log(4)` occurs before the call to `console.log(3)` (since the call to `console.log(3)` is invoked via `setTimeout`, so it is slightly delayed).
 
+</details>
+
 ##
 
 ### Question 22:
@@ -694,6 +796,9 @@ arr2.push(arr3);
 console.log('array 1: length=' + arr1.length + ' last=' + arr1.slice(-1));
 console.log('array 2: length=' + arr2.length + ' last=' + arr2.slice(-1));
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -715,6 +820,8 @@ And a couple of side points here that can sometimes trip someone up in answering
 
 - Like Python, JavaScript honors negative subscripts in calls to array methods like `slice()` as a way of referencing elements at the end of the array; e.g., a subscript of `-1` indicates the last element in the array, and so on.
 
+</details>
+
 ##
 
 ### Question 23:
@@ -729,6 +836,9 @@ console.log(+'1' + '1' + '2');
 console.log('A' - 'B' + '2');
 console.log('A' - 'B' + 2);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -765,6 +875,8 @@ console.log('A' - 'B' + 2);
 
 "A" - "B" + 2 Outputs: NaN Explanation: As exlained in the previous example, "A" - "B" yields NaN. But any operator applied to NaN with any other numeric operand will still yield NaN.
 
+</details>
+
 ##
 
 ### Question 24:
@@ -795,6 +907,9 @@ new getValue1();
 new getValue2();
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `undefined`
@@ -808,6 +923,8 @@ The provided JavaScript code demonstrates the concept of this keyword and its be
 
 - In the `getValue2` function, this.value is assigned the value of `10`, similar to `getValue1`. However, the `printValue` function is defined as an arrow function. Arrow functions do not create their own this binding. Instead, they inherit the this value from the surrounding lexical scope, which in this case is the `getValue2` function. When `printValue` is called, it logs the value of `this.value` from the `getValue2` function's context, which is `10`.
 
+</details>
+
 ##
 
 ### Question 25:
@@ -820,6 +937,9 @@ console.log('1 || 2 = ' + (1 || 2));
 console.log('0 && 1 = ' + (0 && 1));
 console.log('1 && 2 = ' + (1 && 2));
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -843,6 +963,8 @@ The and `&&` operator. In an expression of the form `X&&Y`, `X` is first evaluat
 
 However, the interesting thing with the `&&` operator is that when an expression is evaluated as `true`, then the expression itself is returned. This is fine, since it counts as `true` in logical expressions, but also can be used to return that value when you care to do so. This explains why, somewhat surprisingly, `1 && 2` returns `2` (whereas you might it expect it to return true or `1`).
 
+</details>
+
 ##
 
 ### Question 26:
@@ -854,6 +976,9 @@ console.log(false == '0');
 console.log(false === '0');
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `true`
@@ -862,6 +987,8 @@ console.log(false === '0');
 ### Explanation:
 
 In JavaScript, there are two sets of equality operators. The triple-equal operator `===` behaves like any traditional equality operator would: evaluates to true if the two expressions on either of its sides have the same type and the same value. The double-equal operator, however, tries to coerce the values before comparing them. It is therefore generally good practice to use the `===` rather than `==`. The same holds true for `!==` vs `!=`.
+
+</details>
 
 ##
 
@@ -880,6 +1007,9 @@ a[c] = 456;
 console.log(a[b]);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `456`
@@ -887,6 +1017,8 @@ console.log(a[b]);
 ### Explanation:
 
 When setting an object property, JavaScript will implicitly stringify the parameter value. In this case, since `b` and `c` are both objects, they will both be converted to `[object Object]`. As a result, `a[b]` and `a[c]` are both equivalent to `a["[object Object]"]` and can be used interchangeably. Therefore, setting or referencing `a[c]` is precisely the same as setting or referencing `a[b]`.
+
+</details>
 
 ##
 
@@ -912,6 +1044,9 @@ c[0]++;
 console.log(c);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `3`
@@ -929,6 +1064,8 @@ console.log(c);
 - Since `b` is a constant variable, b++ is trying to assign the incremented value to a constant. which is not allowed, since it will throw an error. `TypeError: Assignment to constant variable.`
 
 - And Since, we got an error in our program, 4 set of problem wont be executed. But if you will run that individually then it is going to output `[3]`
+
+</details>
 
 ##
 
@@ -952,6 +1089,9 @@ var d = function () {
 console.log(d);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `3`
@@ -970,6 +1110,8 @@ console.log(d);
 
 - And Since, we got an error in our program, 4 set of problem wont be executed. But if you will run that individually then it is going to output `[3]`
 
+</details>
+
 ##
 
 ### Question 30:
@@ -981,6 +1123,9 @@ const promise = new Promise((resolve, reject) => resolve());
 promise.finally(() => console.log('cleanup'));
 promise.then(() => console.log('do me first!'));
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -994,6 +1139,8 @@ promise.then(() => console.log('do me first!'));
 - The `finally()` method is called, registering a callback for cleanup, the finally block of code will be executed once the promise is resolved.
 - Then `then()` will be executed, and as we know already that the promise is resolved, it will log the message `do me first!`.
 
+</details>
+
 ##
 
 ### Question 31:
@@ -1005,6 +1152,9 @@ const promise = new Promise((resolve, reject) => resolve());
 promise.finally(() => promise.finally(() => console.log('cleanup')));
 promise.then(() => console.log('do me first!'));
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1022,6 +1172,8 @@ promise.then(() => console.log('do me first!'));
 - So, The `do me first!` is logged first because the then callback is called before the nested finally callback that logs `cleanup`.
 
 #### Note: It's worth nothing that the finally callback is typically used for cleanup operations or logging, and it doesn't affect the resolved value or the rejection reason of the Promise chain.
+
+</details>
 
 ##
 
@@ -1041,6 +1193,9 @@ foo = function () {
 };
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `1`
@@ -1059,6 +1214,8 @@ After that, the reassignment `foo = function() { console.log(2); }` overwrites t
 
 Above code demonstrates that function declarations are hoisted to the top of their scope during the compilation phase, while function expressions are not hoisted until they are executed during the runtime phase.
 
+</details>
+
 ##
 
 ### Question 33:
@@ -1075,6 +1232,9 @@ function foo() {
 }
 foo();
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1093,6 +1253,8 @@ The provided code demonstrates the concept of lexical scoping in JavaScript. Her
 When `bar()` is called inside `foo`, it can access the variable a because of lexical scoping. Lexical scoping means that a function has access to variables defined in its outer (parent) function scope, even after the outer function has finished executing.
 
 In this case, bar is defined inside the scope of `foo`, so it has access to the a variable declared in `foo`. Therefore, when `bar()` is called, it logs the value of a, which is `2`.
+
+</details>
 
 ##
 
@@ -1116,6 +1278,9 @@ setTimeout(function () {
 }, 1000);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `c` `d` `b` `A`
@@ -1138,6 +1303,8 @@ It's important to note that setTimeout is an asynchronous operation, which means
 
 This behavior ensures that the execution of long-running tasks does not block the main thread, allowing the browser to remain responsive to user interactions and other events.
 
+</details>
+
 ##
 
 ### Question 35:
@@ -1152,6 +1319,9 @@ var output = (function (x) {
 
 console.log(output);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1168,6 +1338,8 @@ console.log(output);
 the delete operator cannot remove variables that hold primitive values in JavaScript. It can only remove object properties or array elements. When used with a primitive value, it simply has no effect, and the value remains unchanged.
 
 Therefore, the output of this code will be `0`.
+
+</details>
 
 ##
 
@@ -1187,6 +1359,9 @@ test();
 console.log(a);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `undefined` `1`
@@ -1198,6 +1373,8 @@ console.log(a);
 - The `test` function is declared. Function declarations are hoisted to the top of the scope in their entirety during the compilation phase.
 - `test();` calls the test function, which assigns the value `1` to the variable `a`.
 - `console.log(a);` logs the updated value of `a`, which is now `1`.
+
+</details>
 
 ##
 
@@ -1218,6 +1395,9 @@ function bar() {
 }
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `TypeError: foo is not a function`
@@ -1226,6 +1406,8 @@ function bar() {
 
 - `foo();` is called before the `foo` function is declared or assigned. Due to variable hoisting, the variable `foo` is declared at the top of the scope and initialised with `undefined`. However, when the code tries to invoke `foo()` as a function, it throws a `TypeError: foo is not a function` because `foo` is `undefined` at this point, and `undefined` is not a `function`.
 - Since the error occurred in the program, the program will be terminated.
+
+</details>
 
 ##
 
@@ -1243,6 +1425,9 @@ function a() {
 }
 a();
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1274,6 +1459,8 @@ function a() {
 a();
 ```
 
+</details>
+
 ##
 
 ### Question 39:
@@ -1290,6 +1477,9 @@ a.x = 20;
 console.log(a);
 console.log(b);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1315,6 +1505,8 @@ The `JSON.parse(JSON.stringify(...))` technique is a common way to create a deep
 - It doesn't preserve the prototype chain or object class (the copied object will be a plain object {}).
 - It doesn't preserve data types like `Date`, `RegExp`, or `undefined` values (they are converted to their string representations).
 
+</details>
+
 ##
 
 ### Question 40:
@@ -1336,6 +1528,9 @@ function main() {
 }
 main();
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1368,6 +1563,8 @@ This code demonstrates that:
 - Variables declared with var are function-scoped and can be reassigned within the same scope, even if they are declared multiple times.
 - Variables declared with let have block-level scope and are not hoisted. A new let variable inside a block creates a new binding, separate from outer variables with the same name.
 
+</details>
+
 ##
 
 ### Question 41:
@@ -1386,6 +1583,9 @@ var f2 = function () {
 };
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `f1 executed`
@@ -1398,6 +1598,8 @@ var f2 = function () {
 - `f2();` is called before its declaration. However, only the variable declaration `var f2;` is hoisted to the top of the scope due to variable hoisting. The assignment `f2 = function() { ... }` is not hoisted. As a result, when `f2();` is called, `f2` is still undefined, and attempting to invoke an undefined value as a function throws a TypeError: `f2 is not a function`.
 - After the hoisting, the function declaration function `f1() { ... }` is executed, defining the `f1` function in memory.
 - Finally, the variable assignment `var f2 = function() { ... }` is executed, assigning the function expression to the variable `f2`.
+
+</details>
 
 ##
 
@@ -1414,6 +1616,9 @@ for (var i = 0; i < a.length; i++) {
   }, 5000);
 }
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1458,6 +1663,8 @@ for (let i = 0; i < a.length; i++) {
 }
 ```
 
+</details>
+
 ##
 
 ### Question 43:
@@ -1480,6 +1687,9 @@ for (let delay of delays) {
 console.log('Completed');
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `2` `3` `4` `7`
@@ -1495,6 +1705,8 @@ and after 5 seconds
 - The delay of `500 milliseconds (0.5 seconds)` for the first `setTimeout` expires first, so `Called` is logged to the `console`.
 - After another `500 milliseconds (1 second in total)`, the second `setTimeout` with a delay of `1000 milliseconds` expires, and `Called` is logged again.
 - Finally, after another `500 milliseconds (1.5 seconds in total)`, the third `setTimeout` with a delay of `1500 milliseconds` expires, and `Called` is logged for the third time.
+
+</details>
 
 ##
 
@@ -1513,6 +1725,9 @@ if (!typeof randomValue === 'string') {
 }
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `Yay it's a string!`
@@ -1527,6 +1742,8 @@ if (!typeof randomValue === 'string') {
   - `false === "string"` evaluates to false.
 - Since the condition `!typeof randomValue === "string"` evaluates to `false`, the code block inside the `else` statement is executed.
 - `console.log("Yay it's a string!")` logs the string `Yay it's a string!` to the console.
+
+</details>
 
 ##
 
@@ -1551,6 +1768,9 @@ const member = createMember({
 console.log(member);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `{ email: "my@email.com", address: {} }`
@@ -1558,6 +1778,8 @@ console.log(member);
 ### Explanation:
 
 The default value of `address` is an empty object `{}`. When we set the variable member equal to the object returned by the `createMember` function, we didn't pass a value for the `address`, which means that the value of the `address` is the default empty object `{}`. An empty object is a truthy value, which means that the condition of the `address ? address : null` conditional returns true. The value of the `address` is the `empty` object {}.
+
+</details>
 
 ##
 
@@ -1576,6 +1798,9 @@ animals[cat] = { ...cat, name: 'Sara' };
 console.log(animals[dog]);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `{emoji: '🐈', name: 'Sara'}`
@@ -1589,6 +1814,8 @@ Since the value of dog is an object, `animals[dog]` actually means that we’re 
 `cat` is also an object, which means that `animals[cat]` actually means that we’re overwriting the value of `animals["[object Object]"]` with the new `cat` properties.
 
 Logging `animals[dog]`, or actually `animals["[object Object]"]` since converting the dog object to a string results `[object Object]`, returns the `{ emoji: "🐈", name: "Sara" }`.
+
+</details>
 
 ##
 
@@ -1613,6 +1840,9 @@ runPromises()
   .catch((err) => console.log(err));
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `Third`
@@ -1620,6 +1850,8 @@ runPromises()
 ### Explanation:
 
 The `Promise.all` method runs the passed promises in parallel. If one promise fails, the Promise.all method rejects with the value of the rejected promise. In this case, promise3 is rejected with the value `Third`. We’re catching the rejected value in the chained catch method on the runPromises invocation to catch any errors within the runPromises function. Only `Third` gets logged, since promise3 is rejected with this value.
+
+</details>
 
 ##
 
@@ -1639,6 +1871,9 @@ user.updateEmail('new@email.com');
 console.log(user.email);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `my@email.com`
@@ -1646,6 +1881,8 @@ console.log(user.email);
 ### Explanation:
 
 The updateEmail function is an arrow function, and is not bound to the user object. This means that the this keyword is not referring to the user object, but refers to the global scope in this case. The value of email within the user object does not get updated. When logging the value of user.email, the original value of my@email.com gets returned.
+
+</details>
 
 ##
 
@@ -1662,6 +1899,9 @@ fruit.unshift('🍇');
 
 console.log(fruit);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1680,6 +1920,8 @@ console.log(fruit);
 5. `console.log(fruit)`: This line logs the current state of the `fruit` array to the console, which is `['🍇', '🍊', '🍎']`.
 
 So, the final output after executing all the operations on the `fruit` array is `['🍇', '🍊', '🍎']`.
+
+</details>
 
 ##
 
@@ -1714,6 +1956,9 @@ const updatedUser = updateUser({
 console.log(updatedUser === user);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `true`
@@ -1732,6 +1977,8 @@ console.log(updatedUser === user);
 The output of this code will be: `true`
 
 This is because the `updateUser` function modifies the original `user` object directly, and `updatedUser` is just a reference to the same object. When objects are compared using the strict equality operator `===`, it checks if they refer to the same object in memory. Since `updatedUser` and `user` point to the same object, the comparison returns `true`.
+
+</details>
 
 ##
 
@@ -1756,6 +2003,9 @@ new Calc().increase();
 console.log(calc.count);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `0`
@@ -1774,6 +2024,8 @@ This is because when you create a new instance of the `Calc` class with `new Cal
 
 Therefore, when `console.log(calc.count)` is executed, it prints `0` because the `count` property of the `calc` instance was never incremented.
 
+</details>
+
 ##
 
 ### Question 52:
@@ -1789,6 +2041,9 @@ getFruit([['🍊', '🍌'], ['🍍']]);
 getFruit();
 getFruit([['🍍'], ['🍊', '🍌']]);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1813,6 +2068,8 @@ The output of this code will be: `undefined` `undefined` `🍌`
 
 The optional chaining operator `?.` is a safe way to access nested properties or elements of an object or array. It provides a short-circuit behavior that prevents errors when accessing `null` or `undefined` values, making it easier to handle potentially missing or undefined data.
 
+</details>
+
 ##
 
 ### Question 53:
@@ -1835,6 +2092,9 @@ class Flamingo extends Bird {
 
 const pet = new Flamingo();
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1867,6 +2127,8 @@ In JavaScript, when creating a subclass that extends a parent class, the `super(
 
 In this example, the `Flamingo` class inherits from the `Bird` class, and the `super()` call ensures that the `Bird` constructor is executed after the `Flamingo` constructor's initial log statement.
 
+</details>
+
 ##
 
 ### Question 54:
@@ -1890,6 +2152,9 @@ addHobby('baking', person.hobbies);
 
 console.log(person.hobbies);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -1925,6 +2190,8 @@ In this case:
 
 This demonstrates how default parameters and object mutations can lead to side effects in functions.
 
+</details>
+
 ##
 
 ### Question 55:
@@ -1950,6 +2217,9 @@ counter.increment();
 console.log(counter.#number);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `11`
@@ -1957,6 +2227,8 @@ console.log(counter.#number);
 ### Explanation:
 
 In ES2020 (ECMAScript 2020), JavaScript introduced the concept of private class fields using the `#` symbol. This feature provides true privacy for class properties, a capability that was previously simulated using naming conventions like prefixing properties with an underscore (`_`).
+
+</details>
 
 ##
 
@@ -1973,6 +2245,9 @@ const obj = {
 
 console.log(obj['1']);
 ```
+
+<details>
+<summary>Click to view output</summary>
 
 ### Output:
 
@@ -2008,6 +2283,8 @@ So, when we access `obj["1"]`, the value is `"c"`.
 
 Therefore, the output is `c`.
 
+</details>
+
 ##
 
 ### Question 57:
@@ -2027,6 +2304,9 @@ console.log('javascript' in obj);
 console.log('1' in languages);
 ```
 
+<details>
+<summary>Click to view output</summary>
+
 ### Output:
 
 `false` `true`
@@ -2037,27 +2317,9 @@ The `in` operator in `console.log("javascript" in obj);` checks if a property ex
 
 The `in` operator in `console.log("1" in languages);` checks if a property exists in an array. Here, it checks if the string "1" is a valid index in the languages array. Since languages has an element at index 1, the output will be: `true`
 
+</details>
+
 ##
-
-## Overview
-
-Some initial text that is always visible.
-
-<details>
-  <summary>Click to expand</summary>
-  
-  ## Expanded Content
-
-This content is hidden until you click "Click to expand". You can put more detailed information here, like additional documentation, examples, etc.
-
-```javascript
-// Example code block
-function example() {
-  console.log('Hello, world!');
-}
-```
-
-  </details>
 
 ## Contributing
 
