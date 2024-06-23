@@ -2373,6 +2373,31 @@ In JavaScript, undefined is a falsy value. The if statement evaluates the condit
 
 ##
 
+### Question 60:
+
+What will be the output for below javascript code?
+
+```javascript
+let arr = [1, 2, 3, 4, 5, 6, 7];
+arr.length = 0;
+console.log(arr);
+```
+
+<details>
+<summary>Click to view output</summary>
+
+### Output:
+
+`[]`
+
+### Explanation:
+
+Setting arr.length = 0 clears the array. Thus, console.log(arr); outputs: `[]`
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
