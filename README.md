@@ -2346,6 +2346,33 @@ Here, a.length - 1 calculates the index of the last element in the array, which 
 
 ##
 
+### Question 59:
+
+What will be the output for below javascript code?
+
+```javascript
+if (undefined) {
+  console.log(1);
+} else {
+  console.log(2);
+}
+```
+
+<details>
+<summary>Click to view output</summary>
+
+### Output:
+
+`2`
+
+### Explanation:
+
+In JavaScript, undefined is a falsy value. The if statement evaluates the condition undefined, which is false. Therefore, the code inside the else block is executed, resulting in the output: `2`
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
