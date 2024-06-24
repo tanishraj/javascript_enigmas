@@ -2422,6 +2422,31 @@ Object.keys(arr) returns an array of the keys (indices) of the arr array. which 
 
 ##
 
+### Question 62:
+
+What will be the output for below javascript code?
+
+```javascript
+var a = 10;
+let a = 20;
+console.log(a);
+```
+
+<details>
+<summary>Click to view output</summary>
+
+### Output:
+
+`SyntaxError: Identifier 'a' has already been declared`
+
+### Explanation:
+
+This code will cause a syntax error: SyntaxError: Identifier 'a' has already been declared.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
