@@ -2398,6 +2398,30 @@ Setting arr.length = 0 clears the array. Thus, console.log(arr); outputs: `[]`
 
 ##
 
+### Question 61:
+
+What will be the output for below javascript code?
+
+```javascript
+const arr = ['A', 'B', 'C', 'D', 'E'];
+console.log(Object.keys(arr));
+```
+
+<details>
+<summary>Click to view output</summary>
+
+### Output:
+
+`["0", "1", "2", "3", "4"]`
+
+### Explanation:
+
+Object.keys(arr) returns an array of the keys (indices) of the arr array. which will output: `["0", "1", "2", "3", "4"]`
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
