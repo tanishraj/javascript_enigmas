@@ -2447,6 +2447,35 @@ This code will cause a syntax error: SyntaxError: Identifier 'a' has already bee
 
 ##
 
+### Question 63:
+
+What will be the output for below javascript code?
+
+```javascript
+const person = {
+  firstName: 'Tanish'
+};
+const { firstName = 'Hinu' } = person;
+console.log(firstName);
+```
+
+<details>
+<summary>Click to view output</summary>
+
+### Output:
+
+`Tanish`
+
+### Explanation:
+
+- The person object has a property firstName with the value 'Tanish'.
+- The destructuring assignment const { firstName = "Hinu" } = person; attempts to extract firstName from person. If firstName is undefined, it would use the default value "Hinu".
+- However, since firstName is already defined in the person object with the value 'Tanish', the default value "Hinu" is not used.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
