@@ -1,4 +1,4 @@
-# Javascript Enigmas - Odds of Javascript:
+# Javascript Enigmas - Output Based Questions:
 
 - Contains output based questions for javascript.
 - Example explains the odds of javascript.
