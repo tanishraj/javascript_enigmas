@@ -1,4 +1,4 @@
-# Javascript Enigmas - Output Based Questions:
+# Javascript Enigmas - Odds of Javascript:
 
 - Contains output based questions for javascript.
 - Example explains the odds of javascript.
@@ -2471,6 +2471,33 @@ console.log(firstName);
 - The person object has a property firstName with the value 'Tanish'.
 - The destructuring assignment const { firstName = "Hinu" } = person; attempts to extract firstName from person. If firstName is undefined, it would use the default value "Hinu".
 - However, since firstName is already defined in the person object with the value 'Tanish', the default value "Hinu" is not used.
+
+</details>
+
+##
+
+### Question 64:
+
+What will be the output for below javascript code?
+
+```javascript
+const arr1 = [1, 2, 3, 4];
+const arr2 = [6, 7, 5];
+const result = [...arr1, ...arr2];
+console.log(result);
+```
+
+<details>
+<summary>Click to view output</summary>
+
+### Output:
+
+`[1, 2, 3, 4, 6, 7, 5]`
+
+### Explanation:
+
+- The spread operator (...) is used to unpack the elements of arr1 and arr2 into a new array result.
+- The result array contains all the elements from arr1 followed by all the elements from arr2. which is `[1, 2, 3, 4, 6, 7, 5]`
 
 </details>
 
