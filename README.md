@@ -2533,6 +2533,36 @@ console.log(x);
 
 ##
 
+### Question 66:
+
+What will be the output for below javascript code?
+
+```javascript
+let x = 5;
+let y = ++x;
+console.log(y);
+console.log(x);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`6` `6`
+
+### Explanation:
+
+- let x = 5; initializes x with the value 5.
+- let y = ++x; increments x by 1 first and then assigns the new value of x to y.
+  - x is incremented to 6.
+  - y gets the value 6.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
