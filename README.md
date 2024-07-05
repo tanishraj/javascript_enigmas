@@ -2563,6 +2563,40 @@ console.log(x);
 
 ##
 
+### Question 67:
+
+What will be the output for below javascript code?
+
+```javascript
+const a = { x: 1 };
+const b = { x: 1 };
+console.log(a === b);
+console.log(a.x === b.x);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`false` `true`
+
+### Explanation:
+
+- const a = { x: 1 }; initializes a with an object containing a property x with the value 1.
+- const b = { x: 1 }; initializes b with another object containing a property x with the value 1.
+- console.log(a === b);
+  - This checks for strict equality between the objects a and b.
+  - In JavaScript, objects are compared by reference, not by value. Since a and b are different objects (even though they have the same properties and values), the result is false.
+- console.log(a.x === b.x);
+  - This checks for strict equality between the values of the x properties of a and b.
+  - Since both a.x and b.x have the value 1, the result is true.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
