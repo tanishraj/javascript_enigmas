@@ -2626,6 +2626,37 @@ console.log(filtered);
 
 ##
 
+### Question 69:
+
+What will be the output for below javascript code?
+
+```javascript
+var a = 10;
+let a = 20;
+console.log(a);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`SyntaxError: Identifier 'a' has already been declared`
+
+### Explanation:
+
+This code snippet demonstrates a common JavaScript error:
+
+1. `var a = 10;` declares a variable `a` with function scope.
+2. `let a = 20;` attempts to redeclare `a` with block scope.
+3. This causes a `SyntaxError` because `let` doesn't allow redeclaration of variables in the same scope.
+4. `console.log(a);` is never reached due to the error.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
