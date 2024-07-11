@@ -2597,6 +2597,35 @@ console.log(a.x === b.x);
 
 ##
 
+### Question 68:
+
+What will be the output for below javascript code?
+
+```javascript
+const arr = [11, 0, '', false, 2, 1];
+const filtered = arr.filter(Boolean);
+console.log(filtered);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`[11, 2, 1]`
+
+### Explanation:
+
+- const arr = [11, 0, '', false, 2, 1]; initializes an array arr with the elements [11, 0, '', false, 2, 1].
+- const filtered = arr.filter(Boolean); uses the filter method with Boolean as the callback function. The Boolean function returns false for falsy values (0, '', false, null, undefined, NaN) and true for truthy values.
+  - The filter method creates a new array with all the elements that pass the test implemented by the provided function.
+  - In this case, it filters out the falsy values from arr.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
