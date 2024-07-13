@@ -2657,6 +2657,35 @@ This code snippet demonstrates a common JavaScript error:
 
 ##
 
+### Question 70:
+
+What will be the output for below javascript code?
+
+```javascript
+const arr = ['A', 'B', 'C', 'D', 'E'];
+console.log(Object.keys(arr));
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`['0', '1', '2', '3', '4']`
+
+### Explanation:
+
+This code snippet demonstrates a common JavaScript error:
+
+1. An array `arr` is created with five string elements.
+2. `Object.keys(arr)` returns an array of the array's indices as strings.
+3. The console will log: `['0', '1', '2', '3', '4']`
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
