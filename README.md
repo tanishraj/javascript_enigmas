@@ -2686,6 +2686,37 @@ This code snippet demonstrates a common JavaScript error:
 
 ##
 
+### Question 71:
+
+What will be the output for below javascript code?
+
+```javascript
+var trees = ['pine', 'apple', 'oak', 'maple', 'cherry'];
+delete trees[3];
+console.log(trees.length);
+console.log(trees);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`5`
+`['pine', 'apple', 'oak', empty, 'cherry']`
+
+### Explanation:
+
+1. `var trees = ["pine","apple","oak","maple","cherry"];` creates an array with 5 elements.
+2. `delete trees[3];` removes the value at index 3 ("maple"), leaving an undefined slot.
+3. `console.log(trees.length);` outputs `5`.
+4. The `delete` operator removes the element but doesn't affect the array's length.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
