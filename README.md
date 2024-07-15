@@ -2717,6 +2717,35 @@ console.log(trees);
 
 ##
 
+### Question 72:
+
+What will be the output for below javascript code?
+
+```javascript
+var a = [1, 2, 3];
+a[10] = 99;
+console.log(a[6]);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`undefined`
+
+### Explanation:
+
+1. `var a = [1, 2, 3];` initializes an array with 3 elements.
+2. `a[10] = 99;` assigns a value to index 10, expanding the array.
+3. `console.log(a[6]);` outputs `undefined`.
+4. Accessing an index between 3 and 9 returns `undefined` as these are empty slots.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
