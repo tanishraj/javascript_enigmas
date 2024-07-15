@@ -2746,6 +2746,39 @@ console.log(a[6]);
 
 ##
 
+### Question 73:
+
+What will be the output for below javascript code?
+
+```javascript
+var Employee = {
+  company: 'Acme'
+};
+var employee1 = Object.create(Employee);
+delete employee1.company;
+console.log(employee1.company);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`Acme`
+
+### Explanation:
+
+1. `var Employee = { company: 'Acme' }` creates an object with a `company` property.
+2. `var employee1 = Object.create(Employee);` creates a new object with `Employee` as its prototype.
+3. `delete employee1.company` attempts to delete the `company` property from `employee1`.
+4. `console.log(employee1.company);` outputs `'Acme'`.
+5. The `delete` operation doesn't affect the prototype chain, so `company` is still accessible from the prototype.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
