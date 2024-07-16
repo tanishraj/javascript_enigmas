@@ -2779,6 +2779,38 @@ console.log(employee1.company);
 
 ##
 
+### Question 74:
+
+What will be the output for below javascript code?
+
+```javascript
+var z = 1,
+  y = (z = typeof y);
+console.log(y);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`undefined`
+
+### Explanation:
+
+1. `var z = 1, y = z = typeof y;` is a complex assignment statement.
+2. It's evaluated from right to left:
+   - `typeof y` is `"undefined"` (y hasn't been assigned yet)
+   - `z` is assigned `"undefined"`
+   - `y` is assigned `"undefined"`
+3. `console.log(y);` outputs `"undefined"`.
+4. The final values: `y` is `"undefined"`, `z` is `"undefined"`.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
