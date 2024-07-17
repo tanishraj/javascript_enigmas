@@ -2811,6 +2811,37 @@ console.log(y);
 
 ##
 
+### Question 75:
+
+What will be the output for below javascript code?
+
+```javascript
+const nums = [1,2,3,4,5,6,7];
+nums.forEach((n) => {
+    if(n%2 === 0)
+      break;
+    console.log(n);
+});
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`SyntaxError: Illegal break statement`
+
+### Explanation:
+
+This code attempts to use a `break` statement inside a `forEach` loop, which is not valid JavaScript. The `forEach` method doesn't support `break` to exit the loop early. When the code runs, it will throw a `SyntaxError` indicating that `break` is not allowed in this context.
+
+If the intention is to exit the loop early when an even number is encountered, a different loop construct like `for...of` should be used, or the `forEach` loop should be replaced with an array method that supports early termination, such as `some()` or `every()`. Alternatively, `return` can be used within the `forEach` callback to skip to the next iteration, but it won't completely stop the loop.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
