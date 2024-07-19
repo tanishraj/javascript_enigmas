@@ -2842,6 +2842,48 @@ If the intention is to exit the loop early when an even number is encountered, a
 
 ##
 
+### Question 76:
+
+What will be the output for below javascript code?
+
+```javascript
+function foo() {
+  return "I'm the outer function";
+}
+
+function test() {
+  console.log(bar);
+  return foo();
+  var bar = "I'm a variable";
+  function foo() {
+    return "I'm the inner function";
+  }
+}
+console.log(test());
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`undefined`
+
+`I'm the inner function`
+
+### Explanation:
+
+This code demonstrates function hoisting, variable hoisting, and function scope in JavaScript. When executed, it will output:
+
+`undefined` `I'm the inner function`
+
+The outer `foo` function is never called. The `test` function contains a local `foo` function that shadows the outer one. The `bar` variable is hoisted but not initialized when logged, so it's `undefined`. The inner `foo` function is hoisted and fully defined before the `return` statement, so it's this version that gets called and returned.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
