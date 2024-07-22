@@ -2884,6 +2884,52 @@ The outer `foo` function is never called. The `test` function contains a local `
 
 ##
 
+### Question 77:
+
+What will be the output for below javascript code?
+
+```javascript
+async function foo() {
+  console.log('A');
+  await Promise.resolve();
+  console.log('B');
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  console.log('C');
+}
+
+console.log('D');
+foo();
+console.log('E');
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`D, A, E, B, C`
+
+### Explanation:
+
+This code demonstrates the asynchronous behavior in JavaScript using `async/await` and the event loop. The output will be: `D, A, E, B, C`
+
+The execution flow is as follows:
+
+1. "D" is logged immediately.
+2. `foo()` is called, logging "A" synchronously.
+3. The first `await` creates a microtask, allowing the main thread to continue.
+4. "E" is logged.
+5. The microtask queue is processed, logging "B".
+6. The second `await` sets a timer, which goes into the macrotask queue.
+7. After the next event loop tick, "C" is logged.
+
+This showcases how asynchronous operations interact with the JavaScript event loop and task queues.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
