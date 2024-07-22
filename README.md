@@ -2930,6 +2930,52 @@ This showcases how asynchronous operations interact with the JavaScript event lo
 
 ##
 
+### Question 78:
+
+What will be the output for below javascript code?
+
+```javascript
+setTimeout(() => console.log(1), 0);
+
+console.log(2);
+
+new Promise((res) => {
+  console.log(3);
+  res();
+}).then(() => console.log(4));
+
+console.log(5);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`2, 3, 5, 4, 1`
+
+### Explanation:
+
+This code demonstrates the event loop, microtasks, and macrotasks in JavaScript. The output will be: `2, 3, 5, 4, 1`
+
+The execution order is as follows:
+
+1. The `setTimeout` callback is scheduled as a macrotask.
+2. "2" is logged synchronously.
+3. The Promise executor function runs synchronously, logging "3".
+4. The Promise's `then` callback is scheduled as a microtask.
+5. "5" is logged synchronously.
+6. The microtask queue is processed, logging "4".
+7. The call stack empties, allowing the event loop to process the macrotask queue.
+8. The `setTimeout` callback runs, logging "1".
+
+This illustrates how synchronous code, microtasks (Promises), and macrotasks (setTimeout) are prioritized and executed in JavaScript.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
