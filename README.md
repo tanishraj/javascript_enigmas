@@ -2976,6 +2976,46 @@ This illustrates how synchronous code, microtasks (Promises), and macrotasks (se
 
 ##
 
+### Question 79:
+
+What will be the output for below javascript code?
+
+```javascript
+function getAge() {
+  'use strict';
+  age = 21;
+  console.log(age);
+}
+
+getAge();
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`ReferenceError: age is not defined`
+
+### Explanation:
+
+This code demonstrates the effect of strict mode in JavaScript. The output will be: `ReferenceError: age is not defined`
+
+Key points:
+
+- The function `getAge()` uses 'use strict' directive, enabling strict mode.
+- In strict mode, variables must be declared before use.
+- `age = 21` attempts to assign a value to an undeclared variable.
+- This results in a `ReferenceError`, as strict mode prohibits implicit global variable creation.
+- The `console.log(age)` line is never reached due to the error.
+
+Without 'use strict', the code would create a global `age` variable and log 21. Strict mode helps catch common coding errors and prevents some unsafe actions.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
