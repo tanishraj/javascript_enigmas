@@ -3016,6 +3016,42 @@ Without 'use strict', the code would create a global `age` variable and log 21. 
 
 ##
 
+### Question 80:
+
+What will be the output for below javascript code?
+
+```javascript
+console.log(+true);
+console.log(-true);
+console.log(!'Tanish');
+console.log(!!'Tanish');
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`1` `-1` `false` `true`
+
+### Explanation:
+
+This code demonstrates type coercion and boolean logic in JavaScript. The output will be: `1` `-1` `false` `true`
+
+Breaking it down:
+
+1. `+true`: The unary plus operator coerces `true` to number 1.
+2. `-true`: The unary negation operator coerces `true` to 1, then negates it to -1.
+3. `!'Tanish'`: The logical NOT operator. Any non-empty string is truthy, so NOT makes it false.
+4. `!!'Tanish'`: Double NOT. First NOT converts the string to false, second NOT converts false to true.
+
+These examples showcase how JavaScript handles type conversion in various contexts, particularly with boolean and string types interacting with numeric and logical operators.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
