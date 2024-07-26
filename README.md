@@ -3052,6 +3052,33 @@ These examples showcase how JavaScript handles type conversion in various contex
 
 ##
 
+### Question 81:
+
+What will be the output for below javascript code?
+
+```javascript
+console.log(typeof typeof 1);
+```
+
+<details>
+
+<summary>Click to view output</summary>
+
+### Output:
+
+`string`
+
+### Explanation:
+
+1. `typeof 1` evaluates to `"number"`
+2. `typeof "number"` then evaluates to `"string"`
+
+So, the `typeof` operator applied twice results in `"string"`.
+
+</details>
+
+##
+
 ## Contributing
 
 Pull requests are welcome. If you want to add any output based questions that you want to share with others, feel free to do so.
